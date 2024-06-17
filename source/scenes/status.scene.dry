@@ -1,4 +1,4 @@
-title: Status
+title: 状态
 new-page: true
 is-special: true
 on-arrival: {!
@@ -7,23 +7,23 @@ if (Q.unemployed) {
 }
 !}
 
-= Status
+= 状态
 
-[+ month : month +] [+ year +]
+[+ year +]年[+ month : month +]
 
-Resources available: [+ resources +]
+可用资源：[+ resources +]
 
-SPD position: [? if spd_toleration : toleration ?][? if spd_in_government : in government ?][? if spd_toleration == 0 and spd_in_government == 0 : opposition ?]
+SPD当前位置：[? if spd_toleration : 容忍 ?][? if spd_in_government : 执政 ?][? if spd_toleration == 0 and spd_in_government == 0 : 在野 ?]
 
-Internal dissent: [+ dissent_percent : dissent +]
+内部异议：[+ dissent_percent : dissent +]
 
-= Government
+= 政府
 
-President: [+ president +]
+总统: [+ president +]
 
-Chancellor: [+ chancellor +] ([+ chancellor_party +])
+总理: [+ chancellor +] ([+ chancellor_party +])
 
-Reichstag composition:
+国会组成：
 
 # 1928: 30, 1930: 25, 1932: 22
 SPD: [+ spd_r +]%
@@ -42,11 +42,11 @@ NSDAP: [+ nsdap_r +]%
 # 1928: 9, 1930: 10
 Others: [+ other_r +]%
 
-[? if spd_in_government = 1 : Budget: [+ budget +] ?]
+[? if spd_in_government = 1 : 预算：[+ budget +] ?]
 
-[? if black_thursday_seen = 1 : Unemployment: [+ unemployed_2 +]% ?]
+[? if black_thursday_seen = 1 : 失业率：[+ unemployed_2 +]% ?]
 
-Next election: [+ next_election_month : month +] [+ next_election_year +]
+下次选举：[+ next_election_year +]年[+ next_election_month : month +]
 
 
 # = Public Opinion
