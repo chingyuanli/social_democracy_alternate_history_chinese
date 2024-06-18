@@ -1,4 +1,4 @@
-title: Fundraising
+title: 资金筹募
 new-page: true
 view-if: fundraising_timer <= 0
 on-arrival: fundraising_timer = 6; month_actions += 1
@@ -7,33 +7,33 @@ is-card: true
 card-image: img/poster_2.jpg
 tags: party_affairs
 
-= Fundraising
+= 资金筹募
 
-For better or for worse, the party cannot exist without money.
+无论好坏，没有钱，党是运营不下去的。
 
-- @maintain: Maintain our current dues.
-- @reduce: Reduce dues.
-- @increase: Increase dues.
+- @maintain: 维持当前党费不变。
+- @reduce: 减少党费。
+- @increase: 增加党费。
 
 @maintain
-subtitle: [+ dues +] resources gained.
+subtitle: 获得[+ dues +]资源。
 on-arrival: resources += dues;
 
-We maintain our current dues.
+我们维持当前党费不变。
 
 @reduce
-subtitle: [+ dues - 1 +] resources gained.
+subtitle: 获得[+ dues - 1 +]资源。
 choose-if: dues > 1
 on-arrival: dues -= 1; resources += dues; left_dissent -= 8; center_dissent -= 8; reformist_dissent -= 8; labor_dissent -= 8
 
-Our current members appreciate this, but no one decides to join a party because of the low dues.
+我们的现党员很开心，但没有人会因为党费低就入党。
 
 @increase
-subtitle: [+ dues + 1 +] resources gained. [? if unemployed >= 15 : Given the present economic situation, this may be painful. ?][? if dues >= 4 : Dues are already rather high; increasing them might reduce our membership. ?]
+subtitle: 获得[+ dues + 1 +]资源。 [? if unemployed >= 15 : 介于目前的经济情况，这可能会很痛苦。 ?][? if dues >= 4 : 党费已经很高了，再增加的话我们党员的数量会减少。 ?]
 on-arrival: dues += 1; resources += dues; workers_spd -= 3; unemployed_spd -= 3; workers_spd -= 10 if unemployed >= 15; unemployed_spd -= 10 if unemployed >= 15; workers_spd -= 3*dues if dues >= 5; unemployed_spd -= 3*dues if dues >= 5
 view-if: dues <= 4
 
-Our members grumble at this, and some of the less committed members leave. But now, we have access to additional resources. 
+我们的党员对此怨声载道，一些不那么坚定的成员就此离开了。不过我们由此获得了更多的资源。 
 
-[? if unemployed >= 15 : Because of the presently high unemployment, our members are feeling the extra burden hard. ?]
+[? if unemployed >= 15 : 目前的高失业率使我们某些党员感觉负担沉重。 ?]
 
