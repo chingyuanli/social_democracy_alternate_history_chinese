@@ -1,4 +1,4 @@
-title: Neorevisionism: a new idea
+title: 新修正主义：一个新想法
 new-page: true
 is-card: true
 card-image: img/portraits/MierendorffCarlo.jpg
@@ -7,22 +7,22 @@ on-arrival: shuffle_leadership_timer = 0;
 tags: party_affairs
 max-visits: 1
 
-= Neorevisionism: A New Idea
+= 新修正主义：一个新想法
 
-Several young socialists, led by Carlo Mierendorff, are calling for a "new revisionism" in response to the Nazi threat. This political tendency calls for a mass movement in favor of democracy in order to counter the Nazi and Communist movements, and to update our rhetoric and imagery to appeal to emotion and not just reason.
+以卡洛·米伦多夫为首的年轻社会主义者面对纳粹的威胁正在呼吁一场“新修正主义”运动。这一政治倾向呼吁一场捍卫民主，对抗纳粹和共产党的群众运动，并催促我们更新我们的政治话语和图景，以诉诸情感而不仅仅是理性。
 
-#- @shuffle_leadership: It's time to change our advisors to take into account new ideas.
-- @support_neo: Support the neorevisionist movement.
-- @no_new_ideas: We don't need new ideas.
+#- @shuffle_leadership: 是时候更换我们的顾问以顾及新想法。
+- @support_neo: 支持新修正主义运动。
+- @no_new_ideas: 我们不需要新想法。
 - @easy_discard
 
 @support_neo
 on-arrival: neorevisionist_strength += 10; nazi_urgency += 1; neorevisionism = 1; peoples_party_support += 1
 
-We support the new leaders, and start using new-style propaganda techniques in our campaigns. The results are uncertain so far...
+我们支持了这些新领袖，并开始在我们的宣传中使用了新的手法。我们尚不知道这样做的效果……
 
 
 @no_new_ideas
 on-arrival: neorevisionist_strength -= 5; center_strength += 5; neorevisionism = -1
 
-We do not need these new ideas; they seem to imitate too closely those of the Nazis and Communists.
+我们不需要这些新想法。他们似乎在极度模仿纳粹与共产党的策略。
