@@ -1,4 +1,4 @@
-title: Party Organizations
+title: 党内组织
 new-page: true
 is-card: true
 tags: party_affairs
@@ -7,22 +7,22 @@ on-arrival: month_actions += 1; party_organizations_timer = 6;
 card-image: img/Mann_der_Arbeit.jpg
 max-visits: 5
 
-= Party Organizations
+= 党内组织
 
-In addition to being a political party, the SPD is a social world onto itself, with a vast array of associated organizations which serve the social needs of their members from cradle to grave.
+社民党不仅是一个政党，也是一个独立的小世界，其一系列的附属组织服务了成员们从摇篮到坟墓的需要。
 
-- @newspapers: Fund more newspapers and journalists.
-- @welfare: Fund more mutual aid and welfare programs.
-- @culture: Fund sports leagues, educational, and cultural programs.
-- @rb: Fund the Reichsbanner, our self-defense organization.
-- @youth: We have the reputation of being a party for old men. Support the youth organizations.
-- @nothing: Do not increase funding for any program.
+- @newspapers: 为报纸与记者增加经费。
+- @welfare: 资助互助与福利项目。
+- @culture: 资助体育联盟与教育、文化项目。
+- @rb: 资助我们的自卫组织国旗团。
+- @youth: 我们有“老人党”的名声。支持青年组织。
+- @nothing: 不为任何项目增加经费。
 - @easy_discard
 
 @newspapers
 choose-if: resources > 0
-unavailable-subtitle: Not enough resources.
-subtitle: -1 resources
+unavailable-subtitle: 资源不足。
+subtitle: -1资源
 on-arrival: resources -= 1; media_timer = 0;
 go-to: media
 
@@ -31,29 +31,29 @@ go-to: media
 
 @welfare
 choose-if: resources > 0
-unavailable-subtitle: Not enough resources.
-subtitle: -1 resources
+unavailable-subtitle: 资源不足。
+subtitle: -1资源
 on-arrival: resources -= 1; workers_aid += 1; unemployed_spd += 5*(1 - dissent);
 
-We have increased funding to Workers' Welfare. [? if black_thursday_seen > 0 : In an age of economic crisis, this will be helpful for improving our standing among the unemployed. ?]
+我们增加了工人的福利。[? if black_thursday_seen > 0 : 经济危机中，这将提高我们在失业者中的地位。 ?]
 
 @culture
 choose-if: resources > 0
-unavailable-subtitle: Not enough resources.
-subtitle: -1 resources
+unavailable-subtitle: 资源不足。
+subtitle: -1资源
 on-arrival: resources -= 1; cultural_organizations += 1; left_dissent -= 6; center_dissent -= 6; labor_dissent -= 6; reformist_dissent -= 6; neorevisionist_dissent -= 6
 
-It is not enough for the SPD to solely be a political party. The Worker Singer's League, Worker's Sports, and our schools and libraries are crucial to our members' lives. Funding these organizations makes our members more committed to the party, even when our policies might not be to their liking.
+社民党仅仅做一个政党并不够。工人歌手联盟、工人运动会，以及我们的学校与图书馆对我们会员的生活极为重要。通过资助这些项目，我们的会员会对我们党更加忠诚，即使他们可能并不喜欢我们的一些政策。
 
-[? if sa_strength > 500 : However, it feels frivolous to spend on sports and choirs when the fascists are murdering us in the streets. ?]
+[? if sa_strength > 500 : 然而，在法西斯分子在街头谋杀我们成员的时候，资助体育会和合唱团就显得有些轻浮了。 ?]
 
 @rb
 choose-if: resources > 0
-unavailable-subtitle: Not enough resources.
-subtitle: -1 resources
+unavailable-subtitle: 资源不足。
+subtitle: -1资源
 on-arrival: resources -= 1; rb_strength  += 100; rb_militancy += 0.01; reichsbanner_timer = 0; funded_reichsbanner += 1
 
-We have increased recruiting to the Reichsbanner.
+我们增加了对国旗团的招募。
 
 @youth
 choose-if: resources > 0
@@ -61,10 +61,10 @@ unavailable-subtitle: Not enough resources.
 subtitle: -1 resources
 on-arrival: resources -= 1; rb_strength += 50; rb_militancy += 0.02; young_socialists += 1; left_strength += 5; neorevisionist_strength += 5; radicalization += 1;
 
-Our new youth members flock to the left or neorevisionist wings of the party, and also bring new radicalism to the Reichsbanner.
+我们的年轻成员正往左派或新修正主义派别扎堆而去，这也使国旗团更加激进。
 
 @nothing
 
-We do not fund any party organizations.
+我们没有资助任何党内组织。
 
-- @return: Continue...
+- @return: 继续……
