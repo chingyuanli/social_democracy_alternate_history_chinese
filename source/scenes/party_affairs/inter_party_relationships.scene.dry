@@ -1,4 +1,4 @@
-title: Inter-Party Relationships
+title: 党派关系
 new-page: true
 view-if: year <= 1932 and inter_party_relationships_timer <= 0
 tags: party_affairs
@@ -7,91 +7,91 @@ on-arrival: month_actions += 1; inter_party_relationships_timer = 6;
 card-image: img/weimar_coalition_2.jpg
 max-visits: 8
 
-= Inter-Party Relationships
+= 党派关系
 
-The SPD cannot govern by itself yet. Because we do not have an electoral majority, we need the support of other parties. Recently, our governments have consisted of the Weimar Coalition of the SPD, Center, and Democratic parties. We can reach out and build additional connections with these parties, or perhaps we can stand alone.
+因为社民党在选举中没有绝对多数，我们还不能独自执政，而需要其他党派的帮助。最近，我们组成了社民党、中央党与民主党的魏玛联合政府。我们可以继续与这些党派建立联系，或者也可以选择孑然一身。
 
-- @liberals: Strengthen our bonds with the left-liberal German Democratic Party and conservative-liberal German People's Party.
-- @center: Strengthen our bonds with the Catholic Center Party.
-- @kpd: Work towards repairing relationships with the Communist Party.
-- @spd_alone: The SPD can stand alone for now.
+- @liberals: 增强与左翼自由主义的德意志民主党和保守自由主义的德意志人民党的关系。
+- @center: 增强与天主教中央党的关系。
+- @kpd: 尝试修补与共产党的关系。
+- @spd_alone: 社民党可以孑然一身。
 - @easy_discard
 
 
 @kpd
-subtitle: -1 resources
+subtitle: -1资源
 choose-if: resources >= 1
-unavailable-subtitle: Not enough resources.
+unavailable-subtitle: 资源不足。
 on-arrival: resources -= 1; kpd_inter_party_seen += 1
 go-to: kpd_blutmai if blutmai = 1; kpd_1 if blutmai = 0 and kpd_coalition_success = 0; kpd_2 if kpd_coalition_success = 1
 
 @kpd_1
 on-arrival: kpd_relation += 6*(1 - dissent); communist_coalition += 1 if kpd_inter_party_seen <= 1; reformist_dissent += 2; z_relation -= 2; dvp_relation -= 3
 
-The communists are suspicious of our overtures, especially the Stalinist leadership, who persist in calling us "social fascists". However, connections are made at the grassroots and local levels.
+共产党对我们的姿态持怀疑态度，尤其是斯大林主义的领导层坚持称我们为“社会法西斯主义者”。不过我们在基层与地方一级建立了联系。
 
 @kpd_2
 on-arrival: kpd_relation += 8*(1 - dissent); communist_coalition += 1 if kpd_inter_party_seen <= 1; reformist_dissent += 2; z_relation -= 3; dvp_relation -= 3
 
-After the success of the coalition government with the KPD, they are much more amenable to us.
+在与共产党组成的联合政府取得成功后，他们更愿意接受我们了。
 
 @kpd_blutmai
 on-arrival: kpd_relation += 3*(1 - dissent)
 
-After the events of Blütmai, reconciling with the Communists is difficult, if not impossible. Nevertheless, we must try.
+在血腥五月之后，与共产党重归于好如果不是不可能也是难如登天了。但不管怎么样，我们必须试试。
 
 @center
-subtitle: -1 resources
+subtitle: -1资源
 choose-if: resources >= 1
-unavailable-subtitle: Not enough resources.
+unavailable-subtitle: 资源不足。
 on-arrival: resources -= 1;
 go-to: center_op if z_in_government = 1 and spd_in_government = 0 and chancellor != "Brüning"; center_coalition if spd_in_government = 1 and z_in_government = 1; center_bruning if chancellor = "Brüning"
 
 @center_op
 on-arrival: z_relation += 5*(1 - dissent)
 
-We are currently in opposition to the Center-led government, but that does not preclude the general building of feelings of good will.
+我们当前是中央党政府的反对党，但这并不妨碍我们建立起普遍的善意。
 
 @center_coalition
 on-arrival: z_relation += 10*(1 - dissent)
 
-We are currently coalition partners with them, so improving relations comes naturally.
+我们与他们是联合政府中的伙伴，所以改善关系很简单。
 
 @center_bruning
 on-arrival: z_relation += 5*(1 - dissent)
 
-The Brüning semi-autocratic regime makes building friendly relations difficult, but not impossible.
+布吕宁的半独裁政府使得建立友好关系有些困难，但这不是不可能的。
 
 @liberals
-subtitle: -1 resources
+subtitle: -1资源
 choose-if: resources >= 1
-unavailable-subtitle: Not enough resources.
+unavailable-subtitle: 资源不足。
 on-arrival: resources -= 1; ddp_relation += 5*(1 - dissent)
 go-to: dvp_stresemann if stresemann_dead = 0; dvp_loss if stresemann_dead = 1 and year <= 1930; dvp_moribound if year > 1930
 
-The DDP has been one of our closest allies through the course of the Republic.
+从共和国建立以来，民主党就是我们最亲近的盟友之一。
 
 @dvp_stresemann
 on-arrival: dvp_relation += 8*(1 - dissent)
 
-Gustav Stresemann, the leader of the DVP is the best foreign policy leaders of the republic, and while he has previously expressed monarchist tendencies, he has been friendly towards us.
+人民党的党首古斯塔夫·施特雷泽曼是共和国最杰出的外交家之一。虽然他之前表现出一些保皇倾向，他对我们很友好。
 
 @dvp_loss
 on-arrival: dvp_relation += 5*(1 - dissent)
 
-With the death of Gustav Stresemann, the DVP is much less likely to be accommodating of us. In addition, the liberal parties are electorally in decline, so perhaps our efforts are best spent elsewhere.
+在古斯塔夫·施特雷泽曼去世之后，人民党就不太可能迁就我们了。此外，自由主义政党的选情也在走下坡路，因此我们最好把努力花在别的地方上。
 
-However, given the influence of the DVP among the other right-leaning parties [? if president == "Hindenburg": and with President Hindenburg ?], it can still be helpful to influence them.
+不过介于人民党在其他右翼政党[? if president == "Hindenburg": 和兴登堡 ?]那里的影响，与他们接触或许还是有用的。
 
 @dvp_moribound
 on-arrival: dvp_relation += 5*(1 - dissent)
 
-The liberal parties (both the DDP and DVP) are electorally moribund, so perhaps our efforts are best spent elsewhere.
+自由主义政党在选情上已经奄奄一息了（民主党和人民党都是），因此我们最好把努力花在别的地方上。
 
-However, given the influence of the DVP among the other right-leaning parties[? if president == "Hindenburg": and with President Hindenburg ?], it can still be helpful to influence them.
+不过介于人民党在其他右翼政党[? if president == "Hindenburg": 和兴登堡 ?]那里的影响，与他们接触或许还是有用的。
 
 @spd_alone
 
-Whether it is because we *cannot* or *will not*, we do not make ties with other parties at this moment.
+不管是因为我们*无法*还是*无意*，总之我们没有与其他政党建立联系。
 
 - @return: Continue...
