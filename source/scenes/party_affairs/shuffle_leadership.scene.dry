@@ -1,4 +1,4 @@
-title: Shuffle Leadership
+title: 变更领导
 new-page: true
 is-card: true
 tags: party_affairs
@@ -7,229 +7,228 @@ on-arrival: month_activities += 1; shuffle_leadership_timer = 8;
 card-image: img/vorwarts_2.jpg
 go-to: rm_main
 
-Changing the leadership of the party is painful, but perhaps it is necessary to adapt to changing circumstances.
+变更党内领导权是一件很痛苦的事，但这也许是适应当前变化的必要之举。
 
-Removing advisors will increase dissent from their faction of the party, while selecting advisors will increase a faction's strength and reduce their dissent.
+移除顾问会增加其所属派别的异议，而聘用顾问会增加其所属派别的力量并降低他们的异议。
 
-- @rm_main: Remove advisors
-- @add_advisors: Add advisors
-- @remove_none: Don't change advisors.
+- @rm_main: 移除顾问。
+- @add_advisors: 聘用顾问。
+- @remove_none: 不变更顾问。
 - @easy_discard
 
 
-###################### removing leaders
+###################### 移除顾问
 
 @rm_main
-title: Remove advisors.
+title: 移除顾问。
 tags: center_advisor, left_advisor, reformist_advisor, labor_advisor, neorevisionist_advisor
 frequency: 1
 
 - #remove_advisor
-- @add_advisors: Add advisors
+- @add_advisors: 聘用顾问。
 
 @remove_none
-title: Stop changing advisors.
+title: 不变更顾问。
 go-to: root
 tags: remove_advisor
 
 
 @remove_hilferding
-title: Remove Hilferding
+title: 移除希法亭
 view-if: hilferding_advisor = 1
 on-arrival: hilferding_advisor = 0; center_dissent += 5; n_advisors -= 1
 tags: remove_advisor
 go-to: rm_main
 
-Hilferding has been removed as an advisor. The Centrist faction disapproves.
+希法亭不再是顾问。中间派表示不满。
 
 @remove_wels
-title: Remove Wels
+title: 移除韦尔斯
 view-if: wels_advisor = 1
 tags: remove_advisor
 on-arrival: wels_advisor = 0; center_dissent += 5; n_advisors -= 1
 go-to: rm_main
 
-Wels has been removed as an advisor. The Centrist faction disapproves.
+韦尔斯不再是顾问。中间派表示不满。
 
 @remove_muller
-title: Remove Müller
+title: 移除穆勒
 view-if: muller_advisor = 1
 tags: remove_advisor
 on-arrival: muller_advisor = 0; center_dissent += 5; n_advisors -= 1
 go-to: rm_main
 
-Müller has been removed as an advisor. The Centrist faction disapproves.
-
+穆勒不再是顾问。中间派表示不满。
 
 @remove_breitscheid
-title: Remove Breitscheid
+title: 移除布赖特沙伊德
 view-if: breitscheid_advisor = 1
 tags: remove_advisor
 on-arrival: breitscheid_advisor = 0; center_dissent += 5; n_advisors -= 1
 go-to: rm_main
 
-Breitscheid has been removed as an advisor. The Centrist faction disapproves.
+布赖特沙伊德不再是顾问。中间派表示不满。
 
 # reformists
 
 
 @remove_severing
-title: Remove Severing
+title: 移除泽韦林
 view-if: severing_advisor = 1
 tags: remove_advisor
 on-arrival: severing_advisor = 0; reformist_dissent += 5; n_advisors -= 1
 go-to: rm_main
 
-Severing has been removed as an advisor. The Reformist faction disapproves.
+泽韦林不再是顾问。改革派表示不满。
 
 @remove_baade
-title: Remove Baade
+title: 移除巴德
 view-if: baade_advisor = 1
 tags: remove_advisor
 on-arrival: baade_advisor = 0; reformist_dissent += 3; n_advisors -= 1
 go-to: rm_main
 
-Baade has been removed as an advisor. The Reformist faction disapproves.
+巴德不再是顾问。改革派表示不满。
 
 @remove_braun
-title: Remove Braun
+title: 移除布劳恩
 view-if: braun_advisor = 1
 tags: remove_advisor
 on-arrival: braun_advisor = 0; reformist_dissent += 5; n_advisors -= 1
 go-to: rm_main
 
-Braun has been removed as an advisor. The Reformist faction disapproves.
+布劳恩不再是顾问。改革派表示不满。
 
 @remove_juchacz
-title: Remove Juchacz
+title: 移除尤哈奇
 view-if: juchacz_advisor = 1
 tags: remove_advisor
 on-arrival: juchacz_advisor = 0; reformist_dissent += 5; n_advisors -= 1
 go-to: rm_main
 
-Juchacz has been removed as an advisor. The Reformist faction disapproves.
+尤哈奇不再是顾问。改革派表示不满。
 
 @remove_pfulf
-title: Remove Pfülf
+title: 移除普菲尔夫
 view-if: pfulf_advisor = 1
 tags: remove_advisor
 on-arrival: pfulf_advisor = 0; reformist_dissent += 5; n_advisors -= 1
 go-to: rm_main
 
-Pfülf has been removed as an advisor. The Reformist faction disapproves.
+普菲尔夫不再是顾问。改革派表示不满。
 
 
 # labor
 
 @remove_leipart
-title: Remove Leipart
+title: 移除莱帕特
 view-if: leipart_advisor = 1
 tags: remove_advisor
 on-arrival: leipart_advisor = 0; labor_dissent += 5; n_advisors -= 1
 go-to: rm_main
 
-Leipart has been removed as an advisor. The Labor faction disapproves.
+莱帕特不再是顾问。劳工派表示不满。
 
 @remove_aufhauser
-title: Remove Aufhäuser
+title: 移除奥夫霍伊泽
 view-if: aufhauser_advisor = 1
 tags: remove_advisor
 on-arrival: aufhauser_advisor = 0; labor_dissent += 5; n_advisors -= 1
 go-to: rm_main
 
-Aufhäuser has been removed as an advisor. The Labor faction disapproves.
+奥夫霍伊泽不再是顾问。劳工派表示不满。
 
 @remove_woytinsky
-title: Remove Woytinsky
+title: 移除沃伊京斯基
 view-if: woytinsky_advisor = 1
 tags: remove_advisor
 on-arrival: woytinsky_advisor = 0; labor_dissent += 3; n_advisors -= 1
 go-to: rm_main
 
-Woytinsky has been removed as an advisor. The Labor faction disapproves.
+沃伊京斯基不再是顾问。劳工派表示不满。
 
 # left
 
 @remove_levi
-title: Remove Levi
+title: 移除列维
 view-if: levi_advisor = 1
 tags: remove_advisor
 on-arrival: levi_advisor = 0; left_dissent += 5; n_advisors -= 1
 go-to: rm_main
 
-Levi has been removed as an advisor. The Leftist faction disapproves.
+列维不再是顾问。左派表示不满。
 
 @remove_sender
-title: Remove Sender
+title: 移除森德
 view-if: sender_advisor = 1
 tags: remove_advisor
 on-arrival: sender_advisor = 0; left_dissent += 3; n_advisors -= 1
 go-to: rm_main
 
-Sender has been removed as an advisor. The Leftist faction disapproves.
+森德不再是顾问。左派表示不满。
 
 @remove_rosenfeld
-title: Remove Rosenfeld
+title: 移除罗森菲尔德
 view-if: rosenfeld_advisor = 1
 tags: remove_advisor
 on-arrival: rosenfeld_advisor = 0; left_dissent += 3; n_advisors -= 1
 go-to: rm_main
 
-Rosenfeld has been removed as an advisor. The Leftist faction disapproves.
+罗森菲尔德不再是顾问。左派表示不满。
 
 
 # neorevisionists
 
 @remove_mierendorff
-title: Remove Mierendorff
+title: 移除米伦多夫
 view-if: mierendorff_advisor = 1
 tags: remove_advisor
 on-arrival: mierendorff_advisor = 0; neorevisionist_dissent += 5; n_advisors -= 1
 go-to: rm_main
 
-Mierendorff has been removed as an advisor. The Neorevisionist faction disapproves.
+米伦多夫不再是顾问。新修正主义派表示不满。
 
 @remove_leber
-title: Remove Leber
+title: 移除莱贝尔
 view-if: leber_advisor = 1
 tags: remove_advisor
 on-arrival: leber_advisor = 0; neorevisionist_dissent += 3; n_advisors -= 1
 go-to: rm_main
 
-Leber has been removed as an advisor. The Neorevisionist faction disapproves.
+莱贝尔不再是顾问。新修正主义派表示不满。
 
 @remove_schumacher
-title: Remove Schumacher
+title: 移除舒马赫
 view-if: schumacher_advisor = 1
 tags: remove_advisor
 on-arrival: schumacher_advisor = 0; neorevisionist_dissent += 3; n_advisors -= 1
 go-to: rm_main
 
-Schumacher has been removed as an advisor. The Neorevisionist faction disapproves.
+舒马赫不再是顾问。新修正主义派表示不满。
 
 
 
 ####################### adding advisors
 
 @add_advisors
-title: Add advisors
+title: 聘用顾问。
 choose-if: n_advisors < 3
-unavailable-subtitle: Maximum of 3 advisors.
+unavailable-subtitle: 最多三名顾问。
 go-to: advisor_menu
 
 @advisor_menu
-title: Add other advisors.
+title: 聘用顾问。
 tags: center_advisor, left_advisor, reformist_advisor, labor_advisor, neorev_advisor
 frequency: 1
 
 
-- @centrist: Add Centrists
-- @left: Add Leftists
-- @reformist: Add Reformists
-- @labor: Add Labor
-- @neorev: Add Neorevisionists
-- @rm_main: Remove advisors instead.
-- @remove_none: Stop changing advisors.
+- @centrist: 聘用中间派顾问。
+- @left: 聘用左派顾问。
+- @reformist: 聘用改革派顾问。
+- @labor: 聘用劳工派顾问。
+- @neorev: 聘用新修正主义派顾问。
+- @rm_main: 移除顾问。
+- @remove_none: 不变更顾问。
 
 @centrist
 view-if: n_advisors < 3
@@ -257,8 +256,8 @@ view-if: neorevisionism > 0 and n_advisors < 3
 - #neorev_advisor
 
 @add_hilferding
-title: Rudolf Hilferding
-subtitle: Rudolf Hilferding is an economist and one of our chief Marxist theoreticians.
+title: 鲁道夫·希法亭（Rudolf Hiferding）
+subtitle: 鲁道夫·希法亭是一名经济学家，也是我们首席的马克思主义理论家之一。
 is-card: true
 card-image: img/portraits/HilferdingRudolf.jpg
 tags: center_advisor
@@ -266,11 +265,11 @@ view-if: hilferding_advisor = 0 and n_advisors < 3
 on-arrival: hilferding_advisor = 1; n_advisors += 1
 go-to: advisor_menu
 
-Rudolf Hilferding is now an advisor.
+鲁道夫·希法亭现在是顾问。
 
 @add_wels
-title: Otto Wels
-subtitle: Otto Wels is a long-time party organizer and member of the leadership, serving under Friedrich Ebert.
+title: 奥托·韦尔斯（Otto Wels）
+subtitle: 奥托·韦尔斯是我党的一名资深组织者并长时间担任领导位置，曾是弗里德里希·艾伯特的副手。
 is-card: true
 card-image: img/portraits/WelsRudolf.jpg
 tags: center_advisor
@@ -278,11 +277,11 @@ view-if: wels_advisor = 0 and n_advisors < 3
 on-arrival: wels_advisor = 1; n_advisors += 1
 go-to: advisor_menu
 
-Otto Wels is now an advisor.
+奥托·韦尔斯现在是顾问。
 
 @add_muller
-title: Hermann Müller
-subtitle: Hermann Müller is the last Social Democratic Chancellor.
+title: 赫尔曼·穆勒（Hermann Müller）
+subtitle: 赫尔曼·穆勒曾任共和国总理。
 is-card: true
 card-image: img/portraits/MüllerHermann.jpg
 tags: center_advisor
@@ -290,11 +289,11 @@ view-if: muller_advisor = 0 and muller_dead = 0 and n_advisors < 3
 on-arrival: muller_advisor = 1; n_advisors += 1
 go-to: advisor_menu
 
-Hermann Müller is now an advisor.
+赫尔曼·穆勒现在是顾问。
 
 @add_breitscheid
-title: Rudolf Breitscheid
-subtitle: Rudolf Breitscheid comes from a well-educated background and is one of our foreign policy leaders.
+title: 鲁道夫·布赖特沙伊德（Rudolf Breitscheid）
+subtitle: 鲁道夫·布赖特沙伊德受过良好教育，是我们外交政策的领导人之一。
 is-card: true
 card-image: img/portraits/BreitscheidRudolf.jpg
 view-if: breitscheid_advisor = 0 and n_advisors < 3
@@ -302,14 +301,14 @@ on-arrival: breitscheid_advisor = 1; n_advisors += 1
 go-to: advisor_menu
 tags: center_advisor
 
-Rudolf Breitscheid is now an advisor.
+鲁道夫·布赖特沙伊德现在是顾问。
 
 # reformist
 
 
 @add_severing
-title: Carl Severing
-subtitle: Carl Severing is a one-time Prussian interior minister and police reformer.
+title: 卡尔·泽韦林（Carl Severing）
+subtitle: 卡尔·泽韦林曾任普鲁士内政部长并推行警察部队改革。
 is-card: true
 card-image: img/portraits/SeveringCarl.jpg
 tags: reformist_advisor
@@ -317,11 +316,11 @@ view-if: severing_advisor = 0 and n_advisors < 3
 on-arrival: severing_advisor = 1; n_advisors += 1; reformist_strength += 5
 go-to: advisor_menu
 
-Carl Severing is now an advisor.
+卡尔·泽韦林现在是顾问。
 
 @add_braun
-title: Otto Braun
-subtitle: Otto Braun is the Minister-President of Prussia, and one of the most recognizable and well-known Social Democratic leaders.
+title: 奥托·布劳恩（Otto Braun）
+subtitle: 奥托·布劳恩是普鲁士的内阁首长，是最知名的社会民主党领袖之一。
 is-card: true
 card-image: img/portraits/BraunOtto.jpg
 tags: reformist_advisor
@@ -329,11 +328,11 @@ view-if: braun_advisor = 0 and n_advisors < 3
 on-arrival: braun_advisor = 1; n_advisors += 1; reformist_strength += 5
 go-to: advisor_menu
 
-Otto Braun is now an advisor.
+奥托·布劳恩现在是顾问。
 
 @add_juchacz
-title: Marie Juchacz
-subtitle: Marie Juchacz is the founder of Worker's Welfare, a mutual-aid organization.
+title: 玛丽·尤哈奇（Marie Juchacz）
+subtitle: 玛丽·尤哈奇是互助机构“工人福利”的创始人。
 is-card: true
 card-image: img/portraits/JuchaczMarie.jpg
 view-if: juchacz_advisor = 0 and n_advisors < 3
@@ -341,11 +340,11 @@ on-arrival: juchacz_advisor = 1; n_advisors += 1; reformist_strength += 5
 go-to: advisor_menu
 tags: reformist_advisor
 
-Marie Juchacz is now an advisor.
+玛丽·尤哈奇现在是顾问。
 
 @add_pfulf
-title: Antonie Pfülf
-subtitle: Antonie Pfülf is a leader in social policy and women's rights.
+title: 安东尼·普菲尔夫（Antonie Pfülf）
+subtitle: 安东尼·普菲尔夫是社会政策与女性权利方面的领袖。
 is-card: true
 card-image: img/portraits/PfülfAntonie.jpg
 view-if: pfulf_advisor = 0 and n_advisors < 3
@@ -353,15 +352,15 @@ on-arrival: pfulf_advisor = 1; n_advisors += 1
 go-to: advisor_menu
 tags: reformist_advisor
 
-Antonie Pfülf is now an advisor.
+安东尼·普菲尔夫现在是顾问。
 
 
 
 # left
 
 @add_levi
-title: Paul Levi
-subtitle: Paul Levi is a former KPD leader who was purged for criticizing Communist policies.
+title: 保罗·列维（Paul Levi）
+subtitle: 保罗·列维曾担任共产党党主席，后因批评共产党政策被开除。
 is-card: true
 card-image: img/portraits/LeviPaul.jpg
 view-if: levi_advisor = 0 and levi_dead = 0 and n_advisors < 3
@@ -369,11 +368,11 @@ on-arrival: levi_advisor = 1; n_advisors += 1; left_strength += 5
 go-to: advisor_menu
 tags: left_advisor
 
-Paul Levi is now an advisor.
+保罗·列维现在是顾问。
 
 @add_sender
-title: Toni Sender
-subtitle: Toni Sender is an anti-war and womens' rights advocate, and Reichstag member.
+title: 托妮·森德（Toni Sender）
+subtitle: 托妮·森德是一名反战与女性权利倡导者，也是国会议员。
 is-card: true
 card-image: img/portraits/SenderToni.jpg
 view-if: sender_advisor = 0 and n_advisors < 3
@@ -381,11 +380,11 @@ on-arrival: sender_advisor = 1; n_advisors += 1; left_strength += 5
 go-to: advisor_menu
 tags: left_advisor
 
-Toni Sender is now an advisor.
+托妮·森德现在是顾问。
 
 @add_rosenfeld
-title: Kurt Rosenfeld
-subtitle: Kurt Rosenfeld is a lawyer, anti-militarist activist, and Reichstag member.
+title: 库尔特·罗森菲尔德（Kurt Rosenfeld）
+subtitle: 库尔特·罗森菲尔德是一名律师、反军国主义活动家与国会议员。
 is-card: true
 card-image: img/portraits/RosenfeldKurt.jpg
 view-if: rosenfeld_advisor = 0 and n_advisors < 3 and sapd_formed = 0
@@ -393,13 +392,13 @@ on-arrival: rosenfeld_advisor = 1; n_advisors += 1; left_strength += 5
 go-to: advisor_menu
 tags: left_advisor
 
-Kurt Rosenfeld is now an advisor.
+库尔特·罗森菲尔德现在是顾问。
 
 # labor
 
 @add_leipart
-title: Theodor Leipart
-subtitle: Theodor Leipart is the leader of the ADGB, the German Trade Union Federation.
+title: 特奥多尔·莱帕特（Theodor Leipart）
+subtitle: 特奥多尔·莱帕特是德国总工会联合会的主席。
 is-card: true
 card-image: img/portraits/LeipartTheodor.jpg
 tags: labor_advisor
@@ -407,11 +406,11 @@ view-if: leipart_advisor = 0 and n_advisors < 3
 on-arrival: leipart_advisor = 1; n_advisors += 1; labor_strength += 5
 go-to: advisor_menu
 
-Theodor Leipart is now an advisor.
+特奥多尔·莱帕特现在是顾问。
 
 @add_aufhauser
-title: Siegfried Aufhäuser
-subtitle: Siegfried Aufhäuser is the leader of the AfA-Bund, the white-collar trade union federation.
+title: 西格弗里德·奥夫霍伊泽（Siegfried Aufhäuser）
+subtitle: 西格弗里德·奥夫霍伊泽是白领工人的工会联合会——自由雇员联盟的主席。
 is-card: true
 card-image: img/portraits/AufhäuserSiegfried.jpg
 tags: labor_advisor
@@ -419,11 +418,11 @@ view-if: aufhauser_advisor = 0 and n_advisors < 3
 on-arrival: aufhauser_advisor = 1; n_advisors += 1; labor_strength += 5
 go-to: advisor_menu
 
-Siegfried Aufhäuser is now an advisor.
+西格弗里德·奥夫霍伊泽现在是顾问。
 
 @add_woytinsky
-title: Wladimir Woytinsky
-subtitle: Wladimir Woytinsky is a former Russian Menshevik who is now the lead trade union economist.
+title: 弗拉基米尔·沃伊京斯基（Wladimir Woytinsky）
+subtitle: 弗拉基米尔·沃伊京斯基曾是一个孟什维克，现在是首屈一指的工会经济学家。
 is-card: true
 card-image: img/portraits/WoytinskyWladimir.jpg
 tags: labor_advisor
@@ -431,14 +430,14 @@ view-if: woytinsky_advisor = 0 and n_advisors < 3
 on-arrival: woytinsky_advisor = 1; n_advisors += 1; labor_strength += 3
 go-to: advisor_menu
 
-Wladimir Woytinsky is now an advisor.
+弗拉基米尔·沃伊京斯基现在是顾问。
 
 
 # neorevisionist leaders
 
 @add_mierendorff
-title: Carlo Mierendorff
-subtitle: Carlo Mierendorff is one of the youngest members of the Reichstag, and the originator of the "Neo-Revisionist" movement. He is an anti-Nazi strategist.
+title: 卡洛·米伦多夫（Carlo Mierendorff）
+subtitle: 卡洛·米伦多夫是国会最年轻的议员之一，还是“新修正主义”运动的发起者。他是一名反纳粹策略家。
 is-card: true
 card-image: img/portraits/MierendorffCarlo.jpg
 view-if: mierendorff_advisor = 0 and n_advisors < 3
@@ -446,11 +445,11 @@ on-arrival: mierendorff_advisor = 1; n_advisors += 1; neorevisionist_strength +=
 go-to: advisor_menu
 tags: neorev_advisor
 
-Carlo Mierendorff is now an advisor.
+卡洛·米伦多夫现在是顾问。
 
 #@add_schumacher
-#title: Kurt Schumacher
-#subtitle: Kurt Schumacher is a leading neo-revisionist.
+#title: 库尔特·舒马赫（Kurt Schumacher）
+#subtitle: 库尔特·舒马赫是一名杰出的新修正主义者。
 #is-card: true
 #card-image: img/portraits/SchumacherKurt.jpg
 #tags: neorev_advisor
@@ -458,11 +457,11 @@ Carlo Mierendorff is now an advisor.
 #on-arrival: schumacher_advisor = 1; n_advisors += 1; neorevisionist_strength += 5
 #go-to: advisor_menu
 
-#Kurt Schumacher is now an advisor.
+#库尔特·舒马赫现在是顾问。
 
 @add_leber
-title: Julius Leber
-subtitle: Julius Leber is a former Reichswehr officer who resigned in opposition to the coup attempt.
+title: 尤利乌斯·莱贝尔（Julius Leber）
+subtitle: 尤利乌斯·莱贝尔是一名前国防军军官，因反对未遂政变而辞职。
 is-card: true
 card-image: img/portraits/LeberJulius.jpg
 view-if: leber_advisor = 0 and n_advisors < 3
@@ -470,7 +469,7 @@ on-arrival: leber_advisor = 1; n_advisors += 1; neorevisionist_strength += 5
 go-to: advisor_menu
 tags: neorev_advisor
 
-Julius Leber is now an advisor.
+尤利乌斯·莱贝尔现在是顾问。
 
 
 
