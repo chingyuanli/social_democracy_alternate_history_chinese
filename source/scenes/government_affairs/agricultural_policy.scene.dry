@@ -43,7 +43,7 @@ subtitle: -1预算 - 为工人提供廉价的食物。
 choose-if: budget >= 1
 on-arrival: budget -= 1; pro_consumer += 1; workers_spd += 4*(1-dissent); unemployed_spd += 4*(1-dissent); workers_sol += 4; coalition_dissent += 1 if black_thursday_seen
 
-我们增加了国家对主粮的采购，以求为工人与贫困人口提供食物。因为我们在谈判中争取更低的收购价格，比起农民，这个政策造福的更多的是工人。[? if black_thursday_seen and (in_weimar_coalition or in_grand_coalition) : 我们的联盟伙伴认为这项政策是在浪费预算。 ?]
+我们增加了国家对主粮的采购，以求为工人与贫困人口提供食物。因为我们在谈判中争取更低的收购价格，比起农民，这个政策造福的更多的是工人。[? if black_thursday_seen and (in_weimar_coalition or in_grand_coalition) : 我们的盟友认为这项政策是在浪费预算。 ?]
 
 @state_buyer
 title: 国家采购
