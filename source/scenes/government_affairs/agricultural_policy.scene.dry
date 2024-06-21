@@ -1,4 +1,4 @@
-title: Agricultural Policy
+title: 农业政策
 new-page: true
 is-card: true
 on-arrival: agricultural_policy_timer = 6; month_actions += 1
@@ -6,50 +6,50 @@ view-if: spd_in_government = 1 and (agriculture_minister_party = "SPD") and agri
 card-image: img/portraits/BaadeFritz.jpg
 tags: govt_affairs
 
-= Agricultural Policy
+= 农业政策
 
-While agricultural policy has historically not been the domain of the SPD, there is much need for policy in this area. Our urban constituencies hope for cheaper and more stable food supplies, while small farmers need economic relief. There is also the movement for land reform, to break up the large aristocratic estates and redistribute land to peasants.
+虽然农业政策之前不是社民党涉及的领域，但我们需要有这方面的政策。我们的城市选民想要更加廉价稳定的食物供应，而小农场主需要经济救济。此外，也有呼吁土地改革，将贵族大庄园拆分并将土地重新分配给贫农的运动。
 
 - @land_reform
 - @agricultural_finance
 - @pro_consumer
 - @state_buyer
-- @root: Do not enact any policies for now.
+- @root: 现在不实行任何政策。
 - @easy_discard
 
 @land_reform
-title: Land Reform
-subtitle: -1 budget - Break up the large aristocratic estates and give land to landless workers.
-unavailable-subtitle: [? if budget <= 0 : Requires 1 budget. ?] [? if judicial_reform < 2 : The judiciary would never allow this. ?]
+title: 土地改革
+subtitle: -1预算 - 拆分贵族大庄园并将土地重新分配给贫农。
+unavailable-subtitle: [? if budget <= 0 : 需要1预算。 ?] [? if judicial_reform < 2 : 司法绝不会同意的。 ?]
 choose-if: judicial_reform >= 2 and budget > 0
 on-arrival: budget -= 1; land_reform += 1; coalition_dissent += 1; rural_spd += 5*(1-dissent); rural_nsdap -= 4*(1-dissent); unemployed -= 1 if unemployed >= 5; dvp_relation -= 5; z_relation -= 4; left_strength += 8; left_dissent -= 5; rural_sol += 3; rural_policy += 1; coup_progress += 1; agriculture_goal_completed += 1;
 max-visits: 4
 
-With our policy of land reform, we are acquiring farmland from large estates, and giving the land to farmworkers' associations and small peasants. In essence, this brings class struggle to the countryside, breaking the semi-feudal property relations present in East Prussia and other areas with large estates. The bourgeois parties and large farmers despise our intrusion into the sacredness of private property, while leftists are cautiously optimistic.
+在我们的土地改革政策之下，我们开始从大庄园接手耕地并将这些土地分配给农会与贫农。这本质上将阶级斗争带到了农村，并打破了东普鲁士以及其他大庄园地区的半封建财产关系。资产阶级政党与大农场主鄙视我们对私有财产神圣性的侵犯，而左派则谨慎乐观。
 
 
 @agricultural_finance
-title: Agricultural Financing
-subtitle: -1 budget - Increase financing for agricultural credit and insurance.
+title: 农业财政
+subtitle: -1预算 - 增加农业信贷与保险的援助。
 choose-if: budget >= 1
 on-arrival: budget -= 1; agricultural_finance += 1; rural_spd += 5*(1-dissent); rural_nsdap -= 3*(1-dissent); peoples_party_support += 1; center_dissent += 5; left_dissent += 4; rural_sol += 4; rural_policy += 1;
 
-We have increased financial support for small farmers, providing access to credit and insurance, saving them from privation. The left and center of our party are opposed to our rural policy, seeing these policies as giveaways to petit-bourgeois farmers.
+我们对小农场主增加了经济援助，为他们提供信贷与保险，让他们免于贫困。党内的左派与中间派反对我们的农业政策，他们认为这样便宜了小资产阶级的农场主。
 
 
 @pro_consumer
-title: Food Procurement
-subtitle: -1 budget - Provide inexpensive food for workers.
+title: 食物采购
+subtitle: -1预算 - 为工人提供廉价的食物。
 choose-if: budget >= 1
 on-arrival: budget -= 1; pro_consumer += 1; workers_spd += 4*(1-dissent); unemployed_spd += 4*(1-dissent); workers_sol += 4; coalition_dissent += 1 if black_thursday_seen
 
-We have increased state purchasing of food staples to provide to urban workers and the poor. This benefits workers more than it benefits farmers, as we are negotiating for lower purchase prices. [? if black_thursday_seen and (in_weimar_coalition or in_grand_coalition) : Our coalition partners consider this policy to be a wasteful handout. ?]
+我们增加了国家对主粮的采购，以求为工人与贫困人口提供食物。因为我们在谈判中争取更低的收购价格，比起农民，这个政策造福的更多的是工人。[? if black_thursday_seen and (in_weimar_coalition or in_grand_coalition) : 我们的联盟伙伴认为这项政策是在浪费预算。 ?]
 
 @state_buyer
-title: State Buyer
-subtitle: -2 budget - Create a state monopoly for grain purchases, guaranteeing prices for farmers and stable prices for consumers. [? if judicial_reform < 2 : The judiciary would never allow this. ?]
+title: 国家采购
+subtitle: -2预算 - 建立国家对粮食采购的垄断，为农民与消费者双方保证稳定的价格。[? if judicial_reform < 2 : 司法绝不会同意的。 ?]
 choose-if: budget >= 2 and judicial_reform >= 2
 on-arrival: budget -= 2; state_buyer = 1; rural_spd += 5*(1-dissent); rural_nsdap -= 3*(1-dissent); workers_spd += 4*(1-dissent); unemployed_spd += 5*(1-dissent); coalition_dissent += 1 if (in_grand_coalition or in_weimar_coalition); dvp_relation -= 5; z_relation -= 3; peoples_party_support += 1; rural_policy += 2; capital_strike_progress += 1
 max-visits: 1
 
-Our new purchasing agency guarantees fair prices for farmers, while also providing lower food prices for workers and the urban poor. This policy necessitates heavy spending and an unprecedented level of state intervention in the economy, raising the ire of conservative economists.
+我们新创设的采购机构为农民提供了公平的收购价格，同时也为工人和城市贫民降低了食物价格。这项政策需要大量开支，国家对经济的干预力度也达到了前所未有的水平，这引起了保守派经济学家的愤怒。
