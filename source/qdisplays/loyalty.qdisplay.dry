@@ -1,10 +1,10 @@
 
 # loyalty for police + reichswehr
 
-(0..0.19) very disloyal
-(0.19..0.31) generally disloyal
-(0.31..0.41) mostly disloyal
-(0.41..0.54) divided
-(0.54..0.71) mostly loyal
-(0.71..99) generally loyal
-(99..) completely loyal
+(0..0.19) 非常不忠诚
+(0.19..0.31) 基本不忠诚
+(0.31..0.41) 大多不忠诚
+(0.41..0.54) 分裂
+(0.54..0.71) 大多忠诚
+(0.71..99) 基本忠诚
+(99..) 完全忠诚
