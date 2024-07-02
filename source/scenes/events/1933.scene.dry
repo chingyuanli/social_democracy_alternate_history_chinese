@@ -1,5 +1,5 @@
 title: 1933
-subtitle: The end of the crisis?
+subtitle: 危机的终结？The end of the crisis?
 tags: event
 priority: -3
 view-if: (year = 1933 and month >= 12) or year >= 1934
@@ -26,8 +26,8 @@ if (!Q.economic_plan) {
 
 !}
 
-It is the end of 1933, and the NSDAP still has not taken power. It appears that we have already passed the worst of the years of crisis. We are turning the corner on the Great Depression, and Nazism's days are numbered.
+现在是1933年底，纳粹党仍未掌权。我们似乎已经度过了危机最严重的时期。大萧条即将过去，纳粹主义也时日不多了。
 
-Perhaps Germany will finally enter into a new era of genuine peace...
+也许德国终于能进入一个真正和平的新时代……
 
-- @game_over: Game over.
+- @game_over: 游戏结束。
