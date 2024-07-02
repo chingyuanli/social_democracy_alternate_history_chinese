@@ -1,4 +1,4 @@
-title: Confronting Antisemitism
+title: 对抗反犹主义
 new-page: true
 is-card: true
 view-if: iron_front_formed == 1 and nazi_urgency >= 3
@@ -7,23 +7,23 @@ card-image: img/iron_front.png
 tags: party_affairs, antifascism
 max-visits: 1
 
-= Confronting Antisemitism
+= 对抗反犹主义
 
-Antisemitism has long been a latent feature of German society, but since the beginning of the economic depression, it has grown to a horrifying extent. The Nazis are the worst of it, but all the right-wing parties are deeply antisemitic. Regarding the SPD specifically, our right-wing enemies love to deploy their racist rhetoric against our many Jewish comrades, magnifying criticism of any minor transgression, and they call the entire SPD a Jewish party. We are a favorite target of their invectives.
+德国社会一直潜有反犹主义，但自从经济危机开始以来，这种思想已发展到令人发指的底部。所有右翼政党都有极强的反犹主义，其中又以纳粹为甚。具体到社民党，我们的右翼敌人喜欢拿他们种族主义的一套言论来针对我们犹太裔的同志，对于任何小过失都放大批评，并称整个社民党就是一个犹太党。我们成了他们最喜欢抨击的对象。
 
-- @socialism_of_fools: Antisemitism is the "socialism of fools". We will defeat them with real socialism.
-- @if: Antisemitism is a crisis. Direct the full force of the Iron Front against antisemitism.
-- @all: All Germans will suffer from fascism, not just the Jews. We do not need a separate policy for them.
+- @socialism_of_fools: 反犹主义是“傻瓜的社会主义”。我们将用真正的社会主义将他们打败。
+- @if: 反犹主义的浪潮是一场大危机。我们将用整个钢铁阵线的力量来对抗反犹主义。
+- @all: 所有德国人都会受法西斯主义所害，而不仅仅是犹太人。我们不需要为他们制定单独的政策。
 
 @socialism_of_fools
 
-The best policy to deal with this sort of irrational, senseless hatred is to ignore it. Few are swayed by racist rhetoric; the best way to combat it is to provide economic security so that people do not turn to antisemitism.
+对付这种非理性且毫无意义的仇恨最好的方法就是置之不理。很少有人会被种族主义言论裹挟。打击反犹主义的最好办法就是提供经济保障，这样人们就不会转去那个方向。
 
 @if
 on-arrival: confronting_antisemitism += 2; sa_strength -= 20; democratization += 1; pacifism += 1; nationalism -= 5*(1-dissent); workers_nsdap -= 6*(1-dissent);
 
-We develop an entire campaign against antisemitism under the auspices of the Iron Front. Hopefully our campaign can sway the workers away from Nazism.
+在钢铁阵线的支持下，我们开展了一整套反对反犹主义的宣传运动。希望我们的努力能让工人们远离纳粹主义。
 
 @all
 
-We do not need any special treatment for minorities.
+我们不需要任何针对少数群体的特殊政策。
