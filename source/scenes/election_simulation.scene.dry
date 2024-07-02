@@ -1,10 +1,10 @@
-title: Election Simulation
+title: 选举模拟
 set-jump: post_election
 
 
-- @1928: 1928 historical scenario
-- @1930: 1930 historical scenario
-- @1932: 1932 (July) historical scenario
+- @1928: 1928年历史情况
+- @1930: 1930年历史情况
+- @1932: 1932年（七月）历史情况
 
 @1928
 on-arrival: {!
@@ -279,9 +279,9 @@ Q.anti_democratic_coalition = Q.kpd_r + Q.nsdap_r;
 Q.neo_weimar_coalition = Q.spd_r + Q.ddp_r + Q.z_r + Q.dvp_r + Q.other_r;
 !}
 
-The electoral system is essentially proportional, with the proportion of Reichstag seats roughly equal to the proportion of votes.
+国会是通过比例代表制选举的，政党在每个选区都能得到与得票率基本匹配的议席。
  
-**Election results:**
+**选举结果**
 
 # 1928: 30, 1930: 25, 1932: 22
 SPD: [+ spd_r +]
@@ -307,7 +307,7 @@ NSDAP: [+ nsdap_r +]
 # 1928: 9, 1930: 10
 Other: [+ other_r +]
 
-**Potential coalitions:**
+**可能的联合政府**
 
 Weimar Coalition (SPD + Z + DDP): [+ weimar_coalition +]
 
