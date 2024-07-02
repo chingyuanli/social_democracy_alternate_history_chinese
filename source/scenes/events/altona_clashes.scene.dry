@@ -1,24 +1,24 @@
-title: Nazi March in Altona
+title: 阿尔托纳的纳粹游行
 new-page: true
 subtitle: An SA demonstration, with the potential for violence
 tags: event
 view-if: year == 1932 and month == 6 and sa_banned == 0 and spd_prussia == 1
 max-visits: 1
 
-= Nazi March in Altona
+= 阿尔托纳的纳粹游行
 
-The Nazi SA is planning a march through Altona, a working-class neighborhood of Hamburg known for its high working-class population. Altona is a Communist stronghold, and the planned march will almost certainly lead to violent conflict.
+纳粹的冲锋队计划穿过阿尔托纳区进行游行，这是汉堡市以高工人阶级比例闻名的社区。那里是共产党的铁票仓，因此这场游行几乎一定会导致暴力冲突。
 
-- @ban_march: Ban the march before it starts.
-- @allow_police: Allow the march, with a heavy police presence.
-- @allow_no_police: Allow the march without a police presence.
+- @ban_march: 在开始之前就禁止这场游行。
+- @allow_police: 在有大量警察在场的情况下允许游行。
+- @allow_no_police: 在没有警察在场的情况下允许游行。
 
 @ban_march
 choose-if: judicial_reform >= 2
-unavailable-subtitle: The judiciary would not allow us to ban the protest, because of free speech.
+unavailable-subtitle: 司法会以言论自由为由不允许我们禁止这场游行。
 on-arrival: sa_strength -= 10
 
-We have banned the planned protest. The Nazis appeal the ban in the courts in the name of freedom of speech. Thankfully, the judiciary agrees with us that the Nazis' argument is specious.
+我们禁止了这场游行。纳粹分子以言论自由为由在法庭进行了上诉，但值得庆幸的是，司法部门同意我们的观点，认为纳粹的论点似是而非。
 
 
 @allow_police
