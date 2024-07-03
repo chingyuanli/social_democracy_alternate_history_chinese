@@ -26,7 +26,7 @@ on-arrival: workers_spd -= 5; unemployed_spd -= 6; workers_kpd += 5; unemployed_
 
 @resources
 subtitle: -2资源
-unavailable-subtitle: Not enough resources (need 2).
+unavailable-subtitle: 资源不足（需要2资源）。
 choose-if: resources >= 2
 on-arrival: resources -= 2; coalition_dissent -= 1
 
