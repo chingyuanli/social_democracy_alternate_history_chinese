@@ -86,7 +86,7 @@ achievement: wirtschaftspolitik
 
 @nationalize_1
 title: 实行左派的经济转型计划。
-subtitle: -[+ nationalize_budget +]预算。[? if works_councils >= 3 : 我们的工人委员会降低了实行这个政策所需的预算。 ?] [? if socializations >= 2: 我们既有的社会化政策降低了实行这个政策所需的预算。 ?]
+subtitle: -[+ nationalize_budget +]预算。[? if works_councils >= 3 : 我们的工人委员会降低了实行这个政策所需的预算。 ?][? if socializations >= 2: 我们既有的社会化政策降低了实行这个政策所需的预算。 ?]
 view-if: nationalization_adopted == 1 and nationalization_progress == 0
 go-to: nationalize_deficit if budget < nationalize_budget; nationalize_no_deficit if budget >= nationalize_budget
 
@@ -115,7 +115,7 @@ achievement: wirtschaftspolitik
 title: 为实行国有化政策进行赤字开支。
 choose-if: left_strength > reformist_strength + center_strength or woytinsky_advisor == 1
 subtitle: [? if woytinsky_advisor: 沃伊京斯基可以让我们支持赤字开支。 ?]
-unavailable-subtitle: [? if left_strength <= reformist_strength + center_strength: 党内尚不支持为此进行赤字开支。 ?] [? if not woytinsky_advisor : 也许请一位顾问能让这一行动更好接受？ ?]
+unavailable-subtitle: [? if left_strength <= reformist_strength + center_strength: 党内尚不支持为此进行赤字开支。 ?][? if not woytinsky_advisor : 也许请一位顾问能让这一行动更好接受？ ?]
 on-arrival: nationalization_progress += 1; capital_strike_progress += 3; unemployed -= 2.5 if unemployed >= 6; unemployed -= 1.2 if works_councils >= 3; budget -= nationalize_budget; works_program += 1; workers_spd += 8*(1-dissent); unemployed_spd += 5*(1-dissent); coalition_dissent += 2; dvp_relation -= 6; z_relation -= 4; new_middle_spd -= 3; old_middle_spd -= 3; economy_goal_completed += 1; inflation += 3
 achievement: wirtschaftspolitik
 
@@ -130,33 +130,33 @@ achievement: wirtschaftspolitik
 @nationalize_without_compensation
 title: 不对资本家进行补偿。
 subtitle: 并没有什么理由阻止我们直接接手闲置的工厂。这一行为很可能会遭到资本家的抵抗。
-unavailable-subtitle: [? if left_strength <= reformist_strength + center_strength: 党内的大多数并不支持这一游走于法律边缘的行为。 ?] [? if judicial_reform < 3 : 司法部门绝不会允许的。 ?]
+unavailable-subtitle: [? if left_strength <= reformist_strength + center_strength: 党内的大多数并不支持这一游走于法律边缘的行为。 ?][? if judicial_reform < 3 : 司法部门绝不会允许的。 ?]
 choose-if: left_strength > reformist_strength + center_strength and judicial_reform >= 3
 on-arrival: nationalization_progress += 1; capital_strike_progress += 7; coup_progress += 3; unemployed -= 2.5 if unemployed >= 6; unemployed -= 1.2 if works_councils >= 3 and unemployed >= 3; works_program += 1; workers_spd += 8*(1-dissent); unemployed_spd += 6*(1-dissent); coalition_dissent += 2; dvp_relation -= 10; z_relation -= 8; ddp_relation -= 8; left_strength += 15; reformist_dissent += 10; left_dissent -= 10; new_middle_spd -= 5; old_middle_spd -= 8; economy_goal_completed += 1; kpd_relation += 5*(1-dissent); inflation += 4
 achievement: wirtschaftspolitik
 
-The capitalists are, predictably, up in arms about our policy of nationalization without compensation. They call it illegal expropriation, and it is. Nevertheless, it is clear that they have failed by keeping their factories idle, and we must take radical action.
+可以预见，资本家对我们无偿国有化的政策大为不满。他们称这是非法征用，实际上也的确如此。但无论如何，他们在让工厂闲置的时候就失败了，我们也必须采取激进的行动。
 
-[? if nationalization_progress == 1 : We have begun acquiring idling enterprises from the capitalists[? if works_councils >= 1: , and running them in coordination with empowered works councils ?]. By keeping production going, we can stave off the rising unemployment. ?]
+[? if nationalization_progress == 1 : 我们开始从资本家手中征收闲置企业[? if works_councils >= 1: 并与工人委员会联合经营 ?]。通过保持生产，我们可以避免失业率上升。 ?]
 
-[? if nationalization_progress > 1 : We acquired additional underutilized enterprises and run them in a coordinated socialist fashion with the works councils, hiring formerly laid off workers. A significant portion of the economy is now under public control. ?]
+[? if nationalization_progress > 1 : 我们征收了更多闲置的企业并与工人委员会一起以社会主义的方式运营它们，并雇佣了之前下岗的工人。经济的一大部分现在已处于公共控制之下。 ?]
 
 @empower_workers
-title: Empower workers to take over factories.
-subtitle: We can promise to legalize factory occupations, giving the factories over to worker unions. This is highly confrontational, and would likely provoke a reaction from right-wing militants as well as capitalists.
-unavailable-subtitle: [? if left_strength <= reformist_strength + neorevisionist_strength : The bulk of the party does not support this radical action. ?] [? if judicial_reform < 3 : The judiciary would oppose this action. ?] [? if rb_militancy < 0.25 : If we increased the strength of our paramilitary forces, perhaps we could do this. ?] [? if works_councils < 1 : We need the support of the works councils first. ?]
+title: 赋予工人接管工厂的权力。
+subtitle: 我们可以承诺使占领工厂合法化，将工厂交给工会。这个政策十分咄咄逼人，很可能会激起右翼激进分子和资本家的反应。
+unavailable-subtitle: [? if left_strength <= reformist_strength + neorevisionist_strength : 党内的大多数并不支持这一激进的行为。 ?][? if judicial_reform < 3 : 司法部门绝不会允许的。 ?][? if rb_militancy < 0.25 : 如果我们提升我们准军事组织的实力的话，也许可以做到。 ?][? if works_councils < 1 : 我们首先需要工人委员会的支持。 ?]
 choose-if: left_strength > reformist_strength + neorevisionist_strength and (judicial_reform >= 3 or rb_militancy >= 0.25) and works_councils >= 1
 on-arrival: nationalization_progress += 1; capital_strike_progress += 6; coup_progress += 5; unemployed -= 2 if unemployed >= 6; unemployed -= 1.5 if works_councils >= 3 and unemployed > 4; works_program += 1; workers_spd += 10*(1-dissent); unemployed_spd += 10*(1-dissent); coalition_dissent += 2; dvp_relation -= 10; z_relation -= 8; ddp_relation -= 8; workers_nsdap -= 5*(1-dissent); unemployed_nsdap -= 5*(1-dissent); left_strength += 15; reformist_dissent += 10; left_dissent -= 10; new_middle_spd -= 5; old_middle_spd -= 10; factory_takeovers += 1; economy_goal_completed += 1; kpd_relation += 5*(1-dissent); inflation += 3
 achievement: wirtschaftspolitik
 
-The capitalists are, predictably, up in arms about our policy of legalizing factory occupations. They call it illegal expropriation, and it is. Nevertheless, it is clear that they have failed, and we must take radical action.
+可以预见，资本家对我们将占领工厂合法化的政策大为不满。他们称这是非法征用，实际上也的确如此。但无论如何，他们已经明显失败了，我们也必须采取激进的行动。
 
-Fascists have been taking increasingly violent actions around the occupied factories, calling us thieves and looters. However, the some of the working-class supporters of the fascists have been peeled off, or at least the ones with a sense of class solidarity.
+法西斯分子在被占领的工厂周围采取了越来越多的暴力行动，称我们为小偷和抢劫犯。然而，法西斯分子的一些工人阶级支持者，至少是那些具有阶级团结意识的工人阶级支持者已经开始远离他们了。
 
 
 @nationalize_2
-title: Continue the Left plan for the transformation of the economy.
-subtitle: -[+ nationalize_budget +] budget. [? if works_councils >= 3 : Our works councils have reduced the budget necessary for this program. ?] [? if socializations + nationalization_progress >= 2: Our existing socialization policies have reduced the budget necessary for this program. ?]
+title: 继续实行左派的经济转型计划。
+subtitle: -[+ nationalize_budget +]预算。[? if works_councils >= 3 : 我们的工人委员会降低了实行这个政策所需的预算。 ?][? if socializations + nationalization_progress >= 2: 我们既有的社会化政策降低了实行这个政策所需的预算。 ?]
 view-if: nationalization_adopted == 1 and nationalization_progress >= 1
 go-to: nationalize_deficit if budget < nationalize_budget; nationalize_no_deficit if budget >= nationalize_budget
 
@@ -164,39 +164,39 @@ go-to: nationalize_deficit if budget < nationalize_budget; nationalize_no_defici
 # Moderate economic plan
 
 @moderate_plan
-title: Implement the Reformists' job-creation plan.
-subtitle: -2 budget.
-unavailable-subtitle: -2 budget. [? if budget < 2 : We do not have the necessary budget. ?] [? if unemployed < 8 : Unemployment is low enough that job creation is not necessary. ?]
+title: 实行改革派的创造就业计划。
+subtitle: -2预算。
+unavailable-subtitle: -2预算。[? if budget < 2 : 我们没有实行这个政策所需的预算。 ?][? if unemployed < 8 : 失业率已经足够低了，已经不需要额外创造就业了。 ?]
 view-if: moderate_plan_adopted == 1
 choose-if: budget >= 2 and unemployed >= 8
 on-arrival: budget -= 2; works_program += 1; unemployed -= 3 if unemployed >= 8; inflation += 1.5; workers_spd += 6*(1-dissent); unemployed_spd += 4*(1-dissent); new_middle_spd += 3*(1-dissent); old_middle_spd += 2*(1-dissent); rural_spd += 2*(1-dissent); moderate_plan_progress += 1; kpd_coalition_dissent += 1; inflation += 1 if unemployed < 10; kpd_relation -= 5 if in_popular_front or in_left_front; 
 achievement: wirtschaftspolitik
 
-[? if moderate_plan_progress == 1 : We have started to implement the job-creation plan! Funds are sent to build public works projects across Germany, reducing unemployment. ?]
+[? if moderate_plan_progress == 1 : 我们开始实行创造就业计划！资金被用于在德国各地建设公共工程项目以降低失业率。 ?]
 
-[? if moderate_plan_progress > 1 : We have continued to fund the job-creation plan, using our funds to build public works throughout Germany. ?]
+[? if moderate_plan_progress > 1 : 我们继续为创造就业计划提供资金，利用我们的资金在德国各地建设公共工程。 ?]
 
-[? if unemployed >= 10 : The bourgeois approve of this plan as the "least bad" alternative, seeing it as necessary to save Germany's economy. ?]
+[? if unemployed >= 10 : 资产阶级赞同这一计划，认为它是拯救德国经济所必需的“最不坏”的选择。 ?]
 
-[? if unemployed < 10 : Unemployment is low enough that the plan does not seem to have the intended effect. ?]
+[? if unemployed < 10 : 由于失业率较低，该计划似乎并未达到预期效果。 ?]
 
-[? if in_popular_front or in_left_front: The KPD opposes the economic plan, seeing it as a rescue of capitalism rather than a step towards real socialism. ?]
+[? if in_popular_front or in_left_front: 共产党反对这项政策，他们认为这是在给资本主义做急救而不是向真正的社会主义迈进。 ?]
 
 @moderate_plan_limited_budget
-title: Partially implement the Reformists' job-creation plan, with a lower cost.
-subtitle: -1 budget.
-unavailable-subtitle: -1 budget. [? if budget < 1 : We do not have the necessary budget. ?] [? if unemployed < 8 : Unemployment is low enough that job creation is not necessary. ?]
+title: 以更低的花费部分实行改革派的创造就业计划。
+subtitle: -1预算。
+unavailable-subtitle: -1预算。[? if budget < 1 : 我们没有实行这个政策所需的预算。 ?] [? if unemployed < 8 : 失业率已经足够低了，已经不需要额外创造就业了。 ?]
 view-if: moderate_plan_adopted == 1
 choose-if: budget >= 1 and unemployed >= 8
 on-arrival: budget -= 1; works_program += 1; unemployed -= 2 if unemployed >= 8; inflation += 1; workers_spd += 4*(1-dissent); unemployed_spd += 2*(1-dissent); new_middle_spd += 2*(1-dissent); old_middle_spd += 1*(1-dissent); rural_spd += 1*(1-dissent); moderate_plan_progress += 1; kpd_coalition_dissent += 1; inflation += 1 if unemployed < 10; kpd_relation -= 5 if in_popular_front or in_left_front; 
 achievement: wirtschaftspolitik
 
-[? if moderate_plan_progress == 1 : We have started to implement the job-creation plan! Funds are sent to build public works projects across Germany, reducing unemployment. ?]
+[? if moderate_plan_progress == 1 : 我们开始实行创造就业计划！资金被用于在德国各地建设公共工程项目以降低失业率。 ?]
 
-[? if moderate_plan_progress > 1 : We have continued to fund the job-creation plan, using our funds to build public works throughout Germany. ?]
+[? if moderate_plan_progress > 1 : 我们继续为创造就业计划提供资金，利用我们的资金在德国各地建设公共工程。 ?]
 
-[? if unemployed >= 10 : The bourgeois approve of this plan as the "least bad" alternative, seeing it as necessary to save Germany's economy. ?]
+[? if unemployed >= 10 : 资产阶级赞同这一计划，认为它是拯救德国经济所必需的“最不坏”的选择。 ?]
 
-[? if unemployed < 10 : Unemployment is low enough that the plan does not seem to have the intended effect. ?]
+[? if unemployed < 10 : 由于失业率较低，该计划似乎并未达到预期效果。 ?]
 
-[? if in_popular_front or in_left_front: The KPD opposes the economic plan, seeing it as a rescue of capitalism rather than a step towards real socialism. ?]
+[? if in_popular_front or in_left_front: 共产党反对这项政策，他们认为这是在给资本主义做急救而不是向真正的社会主义迈进。 ?]
