@@ -1,6 +1,6 @@
 title: 我们可以将希特勒驱逐出境。
 subtitle: 他毕竟是一个外国人，还是个罪犯。
-unavailable-subtitle: [? if judicial_reform < 2 : 不幸的是，反动的司法不会配合的。 ?] [? if presidential_election_seen == 1 : 希特勒已经为准备总统大选成为德国公民了。 ?] [? if not spd_prussia : 我们现在没有对普鲁士警察的控制，没有他们我们办不到。 ?]
+unavailable-subtitle: [? if judicial_reform < 2 : 不幸的是，反动的司法部门不会配合的。 ?][? if presidential_election_seen == 1 : 希特勒已经为准备总统大选成为德国公民了。 ?][? if not spd_prussia : 我们现在没有对普鲁士警察的控制，没有他们我们办不到。 ?]
 view-if: nazi_urgency >= 3 and hitler_deported = 0 and chancellor != "Papen" and chancellor != "Schleicher" and investigate_far_right >= 2
 choose-if: judicial_reform >= 2 and presidential_election_seen == 0 and spd_prussia == 1
 
@@ -53,7 +53,7 @@ achievement: deport_hitler
 
 不知何故，计划成功了！对希特勒驱逐计划的抵抗微乎其微。这显示了纳粹的软弱，而且希特勒的物理距离使组织工作变得更加困难，阻碍了纳粹获得更多的选票。
 
-In Hitler's absence, Joseph Goebbels has become the temporary leader of the Nazi party, with substantial influence from Hermann Göring.
+希特勒不在的情况下，纳粹党的临时党首在赫尔曼·戈林的影响下由约瑟夫·戈培尔担任。
 
 @no_deport
 go-to: root
