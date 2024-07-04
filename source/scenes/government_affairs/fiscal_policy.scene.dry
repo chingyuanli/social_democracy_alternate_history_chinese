@@ -1,4 +1,4 @@
-title: Fiscal Policy
+title: 财政政策
 new-page: true
 is-card: true
 tags: govt_affairs
@@ -6,46 +6,46 @@ on-arrival: fiscal_policy_timer = 6; month_actions += 1
 view-if: spd_in_government = 1 and finance_minister_party = "SPD" and fiscal_policy_timer = 0
 card-image: img/portraits/HilferdingRudolf.jpg
 
-= Fiscal Policy
+= 财政政策
 
-Fiscal policy involves issues of taxation and budget.
+财政政策涉及税收与预算问题。
 
-- @raise_progressive: Make the tax system more progressive by raising taxes on the rich and cutting them for the poor.
-- @raise_rich: Increase taxes on the rich.
-- @raise_overall: Increase overall taxes.
-- @cut_overall: Cut overall taxes.
+- @raise_progressive: 通过对富人增税、对穷人减税，使税收制度更具累进性。
+- @raise_rich: 对富人增税。
+- @raise_overall: 全面增税。
+- @cut_overall: 全面减税。
 - @regressive
-- @root: Do not change the tax system.
+- @root: 不改变税收政策。
 - @easy_discard
 
 @raise_progressive
-subtitle: This does not change overall revenue.
+subtitle: 此举不会改变总体税收。
 on-arrival: workers_spd += 6*(1-dissent); old_middle_spd -= 3; new_middle_spd -= 3; coalition_dissent += 1 if in_grand_coalition; dvp_relation -= 4; finance_goal_completed += 1; upper_tax_rates += 1; lower_tax_rates -= 1; capital_strike_progress += 1; capital_strike_progress += 1 if upper_tax_rates > 1; capital_strike_progress += 1 if upper_tax_rates > 3;
 
-Making the tax system more progressive is popular among our base, but it upsets our bourgeois coalition partners, as well as our minimal number of bourgeois voters.
+推进累进税很受我们的选民欢迎，但却会让我们的资产阶级盟友以及极少数资产阶级选民感到不快。
 
 @raise_rich
-subtitle: +2 budget
+subtitle: +2预算
 on-arrival: upper_tax_rates += 1; capital_strike_progress += 1; capital_strike_progress += 1 if upper_tax_rates > 1; capital_strike_progress += 1 if upper_tax_rates > 3; workers_spd += 4*(1-dissent); old_middle_spd -= 4; new_middle_spd -= 4; coalition_dissent += 1 if in_grand_coalition; coalition_dissent += 1 if capital_strike_progress >= 5; budget += 2; dvp_relation -= 4; unemployed += 1; finance_goal_completed += 1; inflation -= 0.6
 
-Raising taxes on the rich is popular among our base, but it alienates the bourgeoisie. Increasing taxes also decreases economic demand, which may lead to more unemployment.
+对富人增税很受我们的选民欢迎，但疏远了资产阶级。增加税收还会降低经济需求，从而可能导致更多的失业。
 
 @cut_overall
-subtitle: -2 budget
+subtitle: -2预算
 choose-if: budget >= 2
 on-arrival: budget -= 2; upper_tax_rates -= 1; lower_tax_rates -= 1; new_middle_spd += 5*(1-dissent); old_middle_spd += 4*(1-dissent); workers_spd += 3*(1-dissent); dvp_relation += 5*(1-dissent); z_relation += 5*(1-dissent); unemployed -= 1 if unemployed >= 5; capital_strike_progress -= 1 if upper_tax_rates < 0; inflation += 0.4
 
-Cutting taxes benefits most the rich and middle-class, who pay more taxes than the working class. Our coalition partners are happy at our orthodox economic course.
+从减税中受益最多的是富人和中产阶级，因为他们交的税更多。我们的盟友对我们正统的经济路线很满意。
 
 @raise_overall
-subtitle: +3 budget
+subtitle: +3预算
 on-arrival: budget += 3; new_middle_spd -= 4; old_middle_spd -= 4; workers_spd -= 3; rural_spd -= 3; unemployed += 2; kpd_coalition_dissent += 1; lower_tax_rates += 1; upper_tax_rates += 1; capital_strike_progress += 1 if upper_tax_rates > 1; capital_strike_progress += 1 if upper_tax_rates > 2; workers_spd -= 5 if lower_tax_rates > 1; inflation -= 1.1
 
-Raising taxes hurts our support among all those who pay taxes. [? if in_grand_coalition or in_weimar_coalition : However, our coalition partners are more supportive of the idea of "shared sacrifice" than simply taxing the rich. ?] Increasing taxes also decreases economic demand, which may lead to more unemployment.
+增税损害了我们在所有纳税人中的支持率。[? if in_grand_coalition or in_weimar_coalition : 不过，我们盟友比起简单向富人征税来说更支持“共同做出牺牲”这一理念。 ?]增加税收还会降低经济需求，从而可能导致更多的失业。
 
 @regressive
-title: Lower taxes on the rich, while increasing consumption taxes (which affect the working class more).
-subtitle: This does not change overall revenue.
+title: 对富人减税并增加消费税（对工人阶级影响更大）。
+subtitle: 此举不会改变总体税收。
 on-arrival: workers_spd -= 6; new_middle_spd += 5*(1-dissent); old_middle_spd += 4*(1-dissent); dvp_relation += 5; z_relation += 4; coalition_dissent -= 1; kpd_coalition_dissent += 1; upper_tax_rates -= 1; lower_tax_rates += 1; workers_spd -= 5 if lower_tax_rates >= 2; capital_strike_progress -= 1 if upper_tax_rates < 0
 
-Our regressive taxation policy benefits the rich while hurting the poor and working-class. Our bourgeois coalition partners approve of this orthodox economic course.
+我们的累退税政策对富人有利但伤害了穷人与工人阶级。我们的资产阶级盟友对我们正统的经济路线很满意。
