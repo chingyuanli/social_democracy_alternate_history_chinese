@@ -37,7 +37,7 @@ on-arrival: center_strength += 5; center_dissent -= 5; labor_dissent += 10; wtb_
 @support_labor
 subtitle: 呼吁增加公共工程以及刺激经济。
 on-arrival: center_dissent += 10; left_dissent += 5; labor_strength += 5; wtb_support += 1;
-go-to: plan_adopted if wtb_support >= 3; plan_support if wtb_supprt < 3
+go-to: plan_adopted if wtb_support >= 3; plan_support if wtb_support < 3
 
 @plan_support
 

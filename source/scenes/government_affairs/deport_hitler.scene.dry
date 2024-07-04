@@ -48,10 +48,12 @@ achievement: deport_hitler
 希特勒不在的情况下，纳粹党的临时党首在赫尔曼·戈林的影响下由约瑟夫·戈培尔担任。
 
 @deport_success
-on-arrival: hitler_deported = 1; sa_strength = sa_strength/2; workers_nsdap -= 10; new_middle_nsdap -= 10; old_middle_nsdap -= 10; rural_nsdap -= 10; unemployed_nsdap -= 10
+on-arrival: hitler_deported = 1; sa_strength = sa_strength/2; workers_nsdap -= 10; new_middle_nsdap -= 10; old_middle_nsdap -= 10; rural_nsdap -= 10; unemployed_nsdap -= 10; coup_progress -= 2; nsdap_leader = "Goebbels"
 achievement: deport_hitler
 
 不知何故，计划成功了！对希特勒驱逐计划的抵抗微乎其微。这显示了纳粹的软弱，而且希特勒的物理距离使组织工作变得更加困难，阻碍了纳粹获得更多的选票。
+
+In Hitler's absence, Joseph Goebbels has become the temporary leader of the Nazi party, with substantial influence from Hermann Göring.
 
 @no_deport
 go-to: root
