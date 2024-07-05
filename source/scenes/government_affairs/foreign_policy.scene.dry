@@ -1,4 +1,4 @@
-title: Foreign Policy
+title: 外交政策
 new-page: true
 is-card: true
 tags: govt_affairs
@@ -6,9 +6,9 @@ on-arrival: month_actions += 1; foreign_policy_timer = 8
 view-if: spd_in_government = 1 and foreign_minister_party = "SPD" and  foreign_policy_timer = 0
 card-image: img/portraits/BreitscheidRudolf.jpg
 
-= Foreign Policy
+= 外交政策
 
-What should our foreign policy priority be?
+我们应该将什么作为我们的外交政策？
 
 - @improve_west
 - @improve_soviet
@@ -18,78 +18,78 @@ What should our foreign policy priority be?
 - @easy_discard
 
 @improve_west
-title: Improve our relations with all of our neighbors.
+title: 与我们的邻居改善关系。
 on-arrival: west_relation += 2; east_relation += 2; reparations_negotiation += 1
 
-The key to peace in Europe is a rapproachment between France and Germany. We are taking steps towards that rapproachment. [? if young_plan_seen == 0 : This is difficult to do when France is occupying a major portion of Germany's territory, but we are working on that part. ?]
+欧洲和平的关键在于法国和德国之间的和解。我们正在采取步骤实现这一和解。[? if young_plan_seen == 0 : 在法国占领德国一大部分领土的情况下，这很难做到，但我们正在努力。 ?]
 
-We also aim to improve relations with our eastern neighbors, Poland and Czechoslovakia, who are righfully terrified of German aggression.
+我们也尝试与我们东边的邻居波兰和捷克斯洛伐克改善了关系，这两个国家情有可原地对德国侵略感到恐惧。
 
 @improve_soviet
-title: Improve our relations with the Soviet Union.
-subtitle: We could also broach the question of the KPD...
+title: 与苏联改善关系。
+subtitle: 我们还可以讨论一下共产党的问题……
 
-The Soviet Union also suffered from the international order created by the Treaty of Versailles; they have been participating in our secret rearmament program. The Treaty of Rapallo in 1922 affirmed our friendly relations.
+苏联也深受《凡尔赛条约》建立的国际秩序所害，他们还参与了我们的秘密再武装计划。1922 年的《拉帕洛条约》确认了我们的友好关系。
 
-The Soviets are asking for economic and developmental assistance. They are still a poor country on the whole, and are desperately trying to catch up to the western powers. There is a chance that our anti-communist coalition partners would be upset, but we could assuage them by asking the Soviets for secret assistance in training and equiping the Reichswehr.
+苏联向我们寻求经济与发展上的援助。他们总体上还是一个穷国，正在拼命追赶西方列强。我们反共的盟友可能会不高兴，但我们可以请求苏联为国防军提供训练与武器的援助来安抚他们。
 
-- @soviet_economic_aid_yes_mil: Provide aid, in exchange for Reichswehr assistance.
-- @soviet_economic_aid_yes: Provide aid, in exchange for only good relations.
-- @soviet_economic_aid_no: Don't provide aid.
+- @soviet_economic_aid_yes_mil: 提供援助，以换取国防军援助。
+- @soviet_economic_aid_yes: 提供援助，仅换取良好关系。
+- @soviet_economic_aid_no: 不提供援助。
 
 @soviet_economic_aid_yes_mil
 choose-if: budget >= 1
 subtitle: -1 budget
 on-arrival: budget -= 1; soviet_relation += 1; reichswehr_strength += 20; reichswehr_loyalty += 0.05; foreign_goal_completed += 1
 
-The Soviets are pleased that we have sent them aid, and have agreed to help train our military. The Reichswehr appreciates our support.
+苏联对我们提供的援助很高兴，并答应帮助我们训练军队。国防军也对我们的支持很满意。
 
 @soviet_economic_aid_yes
 choose-if: budget >= 1
 subtitle: -1 budget
 on-arrival: budget -= 1; soviet_relation += 2; coalition_dissent += 1; foreign_goal_completed += 1
 
-The Soviets are pleased that we have sent them aid, and have not asked for anything specific in exchange. Our coalition partners are less pleased.
+苏联对我们提供援助并不求什么回报很高兴，但我们的盟友就不那么开心了。
 
-- @kpd: Ask if Moscow could help repair our relations with the KPD.
-- @root: Do not mention the KPD.
+- @kpd: 向莫斯科询问是否能帮助改善我们与德国共产党的关系。
+- @root: 不提共产党的事。
 
 @soviet_economic_aid_no
 
-The Soviets are slightly upset, but they seemed to expect this answer.
+苏联方面有些不高兴，但他们似乎早就预料到了我们会这么回答。
 
 
 @kpd
 on-arrival: kpd_relation += 8*(1-dissent); communist_coalition += 1 if kpd_foreign_seen == 0; kpd_foreign_seen = 1
 
-We also mention the KPD in our conversations with the Soviet ambassador. They claim that the KPD is entirely independent of the Soviet government, and that the conflict is Thälmann's doing. But, soon after our conversation we notice a slight improvement in attitudes from the KPD.
+我们在与苏联大使对话时提到了德国共产党的问题。他们声称德国共产党是完全独立于苏联政府，冲突完全是台尔曼造成的。不过在对话之后不久，我们就注意到德国共产党对我们的态度稍有好转。
 
 
 @negotiate
-title: Negotiate regarding our remaining obligations from the Treaty of Versailles.
-subtitle: [? if young_plan_seen == 1 : After passing the Young Plan, France has committed to withdrawing from the Rhineland. Now, we must see if they can reduce our reparations further, given the economic depression. ?]
+title: 就《凡尔赛条约》规定的剩余义务进行谈判。
+subtitle: [? if young_plan_seen == 1 : 在通过扬格计划之后，法国决定从莱茵兰撤军。现在现在，我们必须看看在经济萧条的情况下，他们能否进一步减少我们的赔款。 ?]
 view-if: reparations > -2 and reparations_negotiation < 3
 on-arrival: west_relation += 1; reparations_negotiation += 1; reparations_negotiation += 1 if pacifism >= 3; reparations_negotiations += 1 if nationalism <= 50; reparations_negotiation += 1 if west_relation >= 3
 
-Negotiations procede smoothly for the most part. The Western powers are convinced of Germany's sincerity and goodwill. [? if nationalism <= 50 or pacifism >= 3 : They are pleased to see that we are renouncing militarism. ?]
+谈判总体上进展很顺利。西方列强相信德国的诚意和善意。[? if nationalism <= 50 or pacifism >= 3 : 他们很高兴看到我们放弃了军国主义。 ?]
 
 
 @reduce_reparations
-title: The Western Allies are finally willing to pause our reparations payments!
-subtitle: Our negotiations have been successful.
+title: 西方的协约国终于同意暂停我们的赔款！
+subtitle: 我们的谈判成功了。
 view-if: reparations_negotiation >= 3 and black_thursday_seen == 1
 on-arrival: west_relation += 1; reparations = -2; budget += 2; coalition_dissent -= 1; workers_spd += 8*(1-dissent); old_middle_spd += 5*(1-dissent); new_middle_spd += 5*(1-dissent); rural_spd += 5*(1-dissent); coup_progress -= 2 if coup_progress > 2
 max-visits: 1
 
-Finally, given both the economic circumstances and our continued negotiations, the Western Allies are willing to pause our reparations payments! Much of the credit must go to American president Hoover, who has been friendlier towards us than the Europeans.
+终于，在当前的经济局势与我们的持续谈判下，西方的协约国同意暂停我们的赔款！这很大一部分要归功于美国总统胡佛，他比欧洲人对我们更加友好。
 
-This has reduced tensions within our government, and our party has gotten credit for the achievement.
+这缓解了政府内部的紧张局势，我们党也为此立下了汗马功劳。
 
 @expose
-title: Expose the secret rearmament plans of the previous foreign ministry!
+title: 揭露前任外交部的秘密再武装计划！
 view-if: rearmament_exposed == 0
 on-arrival: west_relation += 2; nationalism -= 5*(1-dissent); pro_republic += 5*(1-dissent); coalition_dissent += 1; rearmament_exposed += 1; reparations_negotiation += 3; coup_progress += 2
 
-The previous foreign ministry, despite its benevolent and peaceful face, was secretly helping the Reichswehr to build up its forces, in contravention of the Treaty of Versailles.
+前任外交部虽然表面上仁慈和平，但实际上却违反《凡尔赛条约》帮助国防军进行扩军。
 
-The Allies are grateful of our exposure and repudiation of militarism. Our partners in the coalition are less supportive.
+协约国对我们揭露这一计划并反对军国主义表示感谢。我们的盟友就不大支持了。
