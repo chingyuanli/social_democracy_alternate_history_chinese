@@ -1,4 +1,4 @@
-title: Judiciary Reform
+title: 司法改革
 new-page: true
 is-card: true
 view-if: spd_in_government = 1 and justice_minister_party = "SPD" and judiciary_timer = 0
@@ -6,29 +6,29 @@ on-arrival: month_actions += 1; judiciary_timer = 6
 card-image: img/portraits/RadbruchGustav.jpg
 tags: govt_affairs
 
-= Judiciary Reform
+= 司法改革
 
-The Judiciary is one of the most reactionary components of the government, along with the military. Many jurists have held office since the days of the Emperor. They give violent fascists like Adolf Hitler laughably light sentences, while ruthlessly persecuting leftists and pacifists for lesser crimes.
+除去军队，司法部门是政府内部最反动的部门。很多法官从帝国时期就开始任职了。他们给像阿道夫·希特勒这样暴力的法西斯分子的判刑轻得可笑，却对罪行较轻的左翼分子和和平主义者进行无情迫害。
 
-There is great demand in our membership for reforming the judiciary, although this may bring us into a collision course with our coalition allies.
+我们的党员强烈要求改革司法部门，但这可能会使我们与联合政府里的盟友产生矛盾。
 
-- @reform: Carry out substantial judicial reforms,
-- @minor_reforms: Carry out minor judicial reforms.
-- @as_is: Leave the judiciary as it is.
+- @reform: 进行大刀阔斧的司法改革。
+- @minor_reforms: 进行小规模的司法改革。
+- @as_is: 保持司法部门的现状。
 - @easy_discard
 
 @reform
 subtitle: -1 budget
-unavailable-subtitle: Not enough budget.
+unavailable-subtitle: 预算不足。
 choose-if: budget >= 1
 on-arrival: budget -= 1; democratization += 2; coalition_dissent += 1 if in_grand_coalition == 1; workers_spd += 5*(1-dissent) if democratization >= 3; judicial_reform += 2; pro_republic += 5*(1-dissent); coup_progress += 1
 
-We investigate jurists who have shown themselves to have biased or corrupt behavior, and try to remove them, replacing them with more democratically-oriented jurists. This obviously raises quite a great deal of ire in conservative circles, including within our coalition. 
+我们对那些有偏见或腐败行为的法官进行了调查并罢免了他们，代之以更加倾向民主的法官。这显然会引起保守派，包括执政联盟内部保守派的极大不满。
 
 @minor_reforms
 on-arrival: democratization += 1; workers_spd += 3*(1-dissent) if democratization >= 3; judicial_reform += 1; pro_republic += 3*(1-dissent);
 
-We try to remove the most obviously biased and corrupt jurists, while leaving most of the system intact. It is slow work reforming the judiciary.
+我们清除了那些最明显带有偏见，最腐败的法官，而让大部分系统保持完整。改革司法部门可急不得。
 
 @as_is
 go-to: root
