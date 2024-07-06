@@ -1,4 +1,4 @@
-title: Military Policy
+title: 军队政策
 new-page: true
 is-card: true
 tags: govt_affairs
@@ -6,39 +6,39 @@ on-arrival: military_policy_timer = 6; month_actions += 1
 view-if: spd_in_government = 1 and reichswehr_minister_party = "SPD" and military_policy_timer = 0
 card-image: img/portraits/LeberJulius.jpg
 
-= Military Policy
+= 军队政策
 
-The Reichswehr is a deeply reactionary institution that has been generally hostile to any notion of socialism or democracy. However, we now control the military as part of the government. What should we do to reform it?
+国防军是一个极其反动的机构，对任何社会主义或者民主的概念都采取普遍敌视的态度。不过，我们现在控制了掌管军队的国防部。我们该怎么改革军队？
 
-- @increase_funding: Increase funding for the military to purchase its loyalty.
-- @decrease_funding: Reduce funding for the military so we have more for social spending.
-- @reform: Conduct a thorough reform of the ranks, reducing the influence of reactionaries and making it more hospitable to us.
-- @root: No change to military policy.
+- @increase_funding: 为军队增加拨款以赎买忠心。
+- @decrease_funding: 削减对军队的拨款，这样我们有更多钱进行社会开支。
+- @reform: 对队伍进行彻底改革，减少反动派的影响，使其对我们更加友好。
+- @root: 不对军队政策进行调整。
 - @easy_discard
 
 @increase_funding
 subtitle: -1 budget
 choose-if: budget >= 1
-unavailable-subtitle: We do not have the budget.
+unavailable-subtitle: 预算不足。
 on-arrival: budget -= 1; coalition_dissent -= 1; reichswehr_loyalty += 0.1; reichswehr_strength += 20; kpd_coalition_dissent += 1
 
-The military and the center-right parties are surprised that we would increase military funding. Our membership tends to be anti-military, and is less enthused.
+军队和中右翼政党对我们会增加对军队的拨款很惊讶。我们的党员大多不太高兴，因为他们反对军国主义。
 
 @decrease_funding
 subtitle: +1 budget
-unavailable-subtitle: There is nothing left to cut.
+unavailable-subtitle: 已经没有能削减的了。
 choose-if: reichswehr_strength > 0
 on-arrival: budget += 1; coalition_dissent += 1 if in_grand_coalition == 1; reichswehr_militancy -= 1; reichswehr_strength -= 20; reichswehr_loyalty -= 0.05; coup_progress += 1; reichswehr_goal_completed = 1;
 
-The military has fewer guns and fewer soldiers. There is no hint of a coup yet, but we do not know where the line will be drawn. The center-right parties are committed to the military and deeply opposed to our budget cuts.
+军队的武器装备和士兵数量都更少了。目前尚没有要政变的迹象，但我们不知道界限在哪里。中右翼政党致力于军事，坚决反对我们削减预算。
 
 
 @reform
 subtitle: -1 budget
 choose-if: budget >= 1
-unavailable-subtitle: We do not have the budget.
+unavailable-subtitle: 预算不足。
 on-arrival: coalition_dissent += 1 if in_grand_coalition == 1; reichswehr_loyalty += 0.15; reichswehr_militancy -= 1; budget -= 1; coup_progress += 1
 
-Our efforts are at least somewhat successful; we have changed the recruiting and training patterns so that more soldiers from non-reactionary backgrounds can join, hopefully changing the culture of the forces. We have also removed some of the officers who supported the previous Kapp putsch.
+我们的努力至少在某种程度上是成功的；我们改变了招募和训练模式，使更多非反动派背景的士兵能够加入，从而有望改变部队的文化。我们还清除了一些支持卡普政变的军官。
 
-The center-right parties are committed to the military and deeply suspicious of our efforts to reform it.
+中右翼政党致力于军事，对我们改革军队的努力深表怀疑。
