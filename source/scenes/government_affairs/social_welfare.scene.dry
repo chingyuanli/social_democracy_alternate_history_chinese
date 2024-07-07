@@ -1,4 +1,4 @@
-title: Social welfare policy
+title: 福利政策Social welfare policy
 new-page: true
 is-card: true
 tags: govt_affairs
@@ -6,22 +6,22 @@ on-arrival: social_welfare_timer = 10; month_actions += 1
 view-if: spd_in_government = 1 and social_welfare_timer = 0
 card-image: img/portraits/JuchaczMarie.jpg
 
-= Social Welfare Policy
+= 福利政策
 
-The social welfare program, including unemployment insurance, healthcare, and old-age care, is the proudest achievement of the SPD in our time in government. There is continuous pressure to dismantle the welfare system[? if black_thursday_seen = 1 :, especially given the economic crisis ?].
+失业保险、医疗以及养老等社会福利政策是社民党在执政期间最为骄傲的成就。[? if black_thursday_seen = 1 :特别是在经济危机的背景下， ?]要求废除福利制度的压力持续不断。
 
-- @reduce_spending: Reduce spending on welfare.
-- @increase_spending_pre_depression: Increase spending on welfare.
-- @increase_spending_post_depression: Increase spending (welfare levels will remain about the same).
-- @spending_same_pre_depression: Keep spending the same.
-- @spending_same_post_depression: Keep spending the same (effectively a service cut).
+- @reduce_spending: 减少福利支出。Reduce spending on welfare.
+- @increase_spending_pre_depression: 增加福利支出。Increase spending on welfare.
+- @increase_spending_post_depression: 增加福利支出（实际福利水平基本会维持不变）。
+- @spending_same_pre_depression: 维持当前福利支出。Keep spending the same.
+- @spending_same_post_depression: 维持当前福利支出（实际福利水平会下降）。
 - @easy_discard
 
 @reduce_spending
-subtitle: This will hurt our proletarian base. +1 Budget
+subtitle: 此举会损害我们的无产阶级票仓。+1预算
 on-arrival: budget += 1; workers_spd -= 6; unemployed_spd -= 6; workers_kpd += 3; welfare -= 1; reformist_dissent += 10; left_dissent += 10; labor_dissent += 10; center_dissent += 5; neorevisionist_dissent += 5; dvp_relation += 5; z_relation += 3; pro_republic -= 3; coalition_dissent -= 1 if in_grand_coalition; kpd_coalition_dissent += 1; kpd_relation -= 8; inflation -= 0.3
 
-We have reduced levels of social welfare spending. This means more poverty and suffering for the working class. Our detractors claim that we are sacrificing proletarian livelihoods for the sake of class peace with the bourgeoisie. Are they wrong? Are the workers wrong to turn to the Communists, in light of our choices?
+我们减少了社会福利支出，这意味着工人阶级会遭受更多的贫困和苦难。我们的批评者声称，为了和资产阶级实现阶级和平，我们牺牲了无产阶级的生计。他们错了吗？鉴于我们的选择，那些转向共产党的工人们错了吗？
 
 
 @increase_spending_pre_depression
@@ -30,27 +30,27 @@ choose-if: budget > 0
 subtitle: -1 Budget
 on-arrival: budget -= 1; workers_spd += 6*(1-dissent); unemployed_spd += 6*(1-dissent); welfare += 1; reformist_dissent -= 5; labor_dissent -= 5; center_dissent -= 5; left_dissent -= 5; neorevisionist_dissent -= 5; coalition_dissent += 1 if welfare > 1; welfare_goal_completed += 1; inflation += 0.3
 
-We have increased welfare spending. Our proletarian base is pleased.
+我们增加了福利支出。我们的无产阶级票仓很满意。
 
 @increase_spending_post_depression
 view-if: unemployed > 15
 choose-if: budget > 0
 on-arrival: budget -= 1; workers_spd += 3*(1-dissent); unemployed_spd += 3*(1-dissent); coalition_dissent += 1 if welfare > 0; welfare_goal_completed += 1; inflation += 0.3
-subtitle: The increased levels of unemployment necessitate more spending on aid to maintain the same benefits. -1 Budget
+subtitle: 由于失业率上升，维持同样的福利水平必须增加福利支出。-1预算
 
-Increasing welfare spending is necessary in light of the rise in unemployment, so we are essentially treading water.
+鉴于失业率上升就必须增加福利支出，因此我们基本上是在“踩水”。
 
 @spending_same_pre_depression
 view-if: unemployed <= 15
 
-We have kept welfare spending the same.
+我们维持当前福利支出不变。
 
 
 @spending_same_post_depression
 view-if: unemployed > 15
 on-arrival: workers_spd -= 3; unemployed_spd -= 4; welfare -= 1; reformist_dissent += 5; left_dissent += 5; labor_dissent += 5; center_dissent += 5; neorevisionist_dissent += 5; kpd_coalition_dissent += 1; kpd_relation -= 8 if in_popular_front or in_left_front
-subtitle: The increased levels of unemployment necessitate more spending on aid.
+subtitle: 由于失业率上升，维持同样的福利水平必须增加福利支出。
 
-Increasing welfare spending is necessary in light of the rise in unemployment, so we have essentially cut welfare. The workers are justifiably displeased - we are sacrificing their livelihoods to appease bourgeois demands for austerity.
+鉴于失业率上升就必须增加福利支出，所以我们实际上削减了福利水平。工人很不高兴，这也情有可原——我们为了满足资产阶级的紧缩要求牺牲了他们的生计。
 
-[? if in_popular_front or in_left_front: The KPD is turning against us for our welfare policy. ?]
+[? if in_popular_front or in_left_front: 共产党反对我们的福利政策。 ?]
