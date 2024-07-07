@@ -1,4 +1,4 @@
-title: The Prussian Bulwark
+title: 普鲁士堡垒
 new-page: true
 is-card: true
 view-if: spd_prussia = 1 and prussian_affairs_timer <= 0
@@ -6,22 +6,22 @@ on-arrival: prussian_affairs_timer = 6; month_actions += 1
 tags: govt_affairs
 card-image: img/braun.jpg
 
-= Prussian Affairs
+= 普鲁士事务
 
-Prussia, by far the largest and most important state in Germany, is governed by our party, in a coalition with the Center and Democratic parties. It is the most stable and democratic state government in Germany, led by the able Otto Braun.
+普鲁士是德国目前最大且最重要的州，由我们与中间党和民主党等政党联合统治。在能干的奥托·布劳恩的领导下，普鲁士州政府是全国最稳定、最民主的州政府。
 
-We can enact policies in Prussia.
+我们可以在普鲁士制定政策。
 
-- @police_loyalty: Bolster the loyalty of the police.
-- @police_strength: Recruit additional police.
-- @bureaucracy: Purge the bureaucracy of reactionary elements.
-- @ban_sa: Ban the SA, the Nazi paramilitary group.
-- @unban_sa: Reverse the SA ban.
-- @ban_rfb: Ban the RFB, the Communist paramilitary.
-- @unban_rfb: Reverse the RFB ban.
-- @ban_sh: Ban the Stahlhelm, the Nationalist paramilitary.
-- @unban_sh: Reverse the Stahlhelm ban.
-- @root: No new policies are needed.
+- @police_loyalty: 提升警察的忠诚度。
+- @police_strength: 招募更多警察。
+- @bureaucracy: 清除官僚机构中的反动分子。
+- @ban_sa: 查禁纳粹党的准军事组织冲锋队。
+- @unban_sa: 取消对冲锋队的禁令。
+- @ban_rfb: 查禁共产党的准军事组织红色阵线。
+- @unban_rfb: 取消对红色阵线的禁令。
+- @ban_sh: 查禁民族主义的准军事组织钢盔团。
+- @unban_sh: 取消对钢盔团的禁令。
+- @root: 我们目前不需要新政策。
 - @easy_discard
 
 @police_loyalty
@@ -29,53 +29,53 @@ view-if: prussian_police_loyalty < 1
 on-arrival: prussian_police_loyalty += 0.1
 
 # increase police loyalty
-The police have historically been overrun with reactionaries, and we are trying to change this, little by little. We have improved the training and recruitment process to select for a broader demographic than the traditional conservatives, and to put a tighter leash on their political activity. In addition, we set up committees to investigate the ranks of the police and remove those with far-right sympathies. It is a slow and arduous work.
+警察部队里历来充斥着反动分子，我们正试图一点一点改变这种情况。我们改进了培训和招募程序，从比传统保守派更广泛的人群中进行选拔，并对他们的政治活动施加更严格的约束。除此之外，我们还成立了委员会来调查警察队伍，清除那些同情极右派的人。这是一项缓慢而艰巨的工作。
 
-Current police loyalty: [+ prussian_police_loyalty : loyalty +].
+当前警察忠诚度：[+ prussian_police_loyalty : loyalty +].
 
 @police_strength
 on-arrival: prussian_police_strength += 20
 
-We have increased the size of the Prussian police.
+我们扩大了普鲁士警察的规模。
 
 @bureaucracy
 on-arrival: prussian_police_loyalty += 0.05; nationalism -= 5; pacifism += 1; democratization += 1; pro_republic += 3*(1-dissent); new_middle_spd += 2*(1-dissent) if democratization >= 3; new_middle_spd += 2*(1-dissent) if democratization >= 4; coup_progress += 0.5
 
-The bureaucracy is deeply reactionary, and many abuse their power to favor the political right. By removing the pro-monarchy and pro-dictatorship elements, we can democratize it. Some of our opponents claim that we are infringing on individual freedoms, but perhaps the security of the republic requires it.
+官僚机构十分反动，很多人滥用权力来偏袒右派。我们可以通过将支持君主制与独裁统治的分子清除出去，以使官僚队伍更加民主化。我们的一些反对者声称我们侵犯了个人自由，但为了共和国的安全，这也许是必须的。
 
 @ban_sa
 view-if: nazi_urgency >= 3 and sa_banned == 0
 on-arrival: sa_strength *= 0.9; sa_strength *= 0.75 if prussian_police_loyalty >= 0.75; sa_banned = 1; dvp_relation -= 3; prussian_police_loyalty -= 0.05; sa_militancy -= 0.05; sa_ban_timer = 6;
 
-As it turns out, the Nazi SA has many allies in the police and bureaucracy. Our relationship with the police weakens, and the SA can still organize illegally, right under the police's noses. [? if prussian_police_loyalty >= 0.7 : Nevertheless, the SA is substantially weakend by our ban. ?] 
+事实证明，纳粹的冲锋队在警察和官僚机构中有许多盟友。我们与警察部门的关系变差了，而冲锋队仍能在警察的眼皮子底下非法活动。[? if prussian_police_loyalty >= 0.7 : 不管如何，冲锋队的力量还是被我们的禁令大大削弱了。 ?] 
 
 @unban_sa
 view-if: sa_banned = 1
 on-arrival: sa_banned = 0; sa_strength += 100; sa_militancy += 0.05
 
-The SA is no longer banned. They immediately go on a recruiting spree.
+冲锋队不再被禁。他们立即开始疯狂招募。
 
 @ban_sh
 on-arrival: sh_strength *= 0.85; sh_strength *= 0.7 if prussian_police_loyalty >= 0.75; sh_banned = 1; dvp_relation -= 5; prussian_police_loyalty -= 0.1; coalition_dissent += 1 if spd_in_government = 1 and in_grand_coalition = 1 and president = "Hindenburg"; sh_ban_timer = 6;
 view-if: sh_banned == 0
 
-[? if president == "Hindenburg": Banning the Stahlhelm weakens our relationship with President Hindenburg, as well as the political right and the police. ?][? if president != "Hindenburg": Banning the Stahlhelm weakens our relationship with the political right and the police. ?] [? if spd_in_government = 1 and in_grand_coalition = 1 and president = "Hindenburg" : It also weakens our coalition due to the influence of Hindenburg on the right wing of our coalition. ?] In addition, the Stahlhelm still operates out of public sight. 
+[? if president == "Hindenburg": 查禁钢盔团使我们与兴登堡总统、右翼以及警察部门的关系变差了。 ?][? if president != "Hindenburg": 查禁钢盔团使我们与右翼和警察部门的关系变差了。 ?][? if spd_in_government = 1 and in_grand_coalition = 1 and president = "Hindenburg" : 由于兴登堡总统对我们右翼盟友的影响，这也使我们的执政联盟内部更加紧张。 ?]同时，钢盔团仍在公共视线之外活动。
 
 @unban_sh
 view-if: sh_banned = 1
 on-arrival: sh_banned = 0; sh_strength += 100
 
-The Stahlhelm is no longer banned.
+钢盔团不再被禁。
 
 
 @ban_rfb
 view-if: communist_coalition < 3 and rfb_banned = 0
 on-arrival: kpd_relation -= 15; rfb_strength -= 50; rfb_banned = 1; communist_coalition -= 1; z_relation += 5; dvp_relation += 5; prussian_police_loyalty += 0.1
 
-The ban is enthusiastically carried out by the police, perhaps too enthusiastically. The Communists take this as one more reason why the Socialists are traitors to the left. However, the moderate and center-right parties approve, as do the police.
+警察热情地，也许是过度热情地执行了禁令。共产党将此视为社民党是左派叛徒的又一理由。不过，温和派和中右翼党派，以及警方都对禁令表示赞成。
 
 @unban_rfb
 view-if: rfb_banned = 1
 on-arrival: rfb_banned = 0; rfb_strength += 50; prussian_police_loyalty -= 0.1
 
-The Communist RFB is no longer banned.
+红色阵线不再被禁。
