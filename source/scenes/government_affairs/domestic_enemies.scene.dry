@@ -28,7 +28,7 @@ card-image: img/portraits/SeveringCarl.jpg
 view-if: nazi_urgency >= 3 and sa_banned == 0
 on-arrival: sa_strength *= 0.85; sa_strength *= 0.7 if interior_police_loyalty >= 0.7; sa_banned = 1; dvp_relation -= 3; prussian_police_loyalty -= 0.05; interior_police_loyalty -= 0.05; sa_militancy -= 0.05; sa_ban_timer = 6;
 
-事实证明，纳粹的冲锋队在警察和官僚机构中有许多盟友。我们与警察的部门关系变差了，而冲锋队仍能在警察的眼皮子底下非法活动。[? if interior_police_loyalty >= 0.7 : 不管如何，冲锋队的力量还是被我们的禁令大大削弱了。 ?]
+事实证明，纳粹的冲锋队在警察和官僚机构中有许多盟友。我们与警察部门的关系变差了，而冲锋队仍能在警察的眼皮子底下非法活动。[? if interior_police_loyalty >= 0.7 : 不管如何，冲锋队的力量还是被我们的禁令大大削弱了。 ?]
 
 @unban_sa
 view-if: sa_banned = 1
