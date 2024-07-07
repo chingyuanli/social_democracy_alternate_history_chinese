@@ -1,4 +1,4 @@
-title: War Guilt Inquiry
+title: 调查战争罪责
 new-page: true
 is-card: true
 tags: govt_affairs
@@ -7,27 +7,27 @@ view-if: spd_in_government = 1 and war_guilt_timer = 0
 card-image: img/reichstag_1.jpg
 max-visits: 1
 
-= Reichstag War Guilt Inquiry
+= 国会战争罪责调查
 
-The War Guilt Inquiry has been an intermittent Reichstag committee for investigating the causes of the Great War and the German defeat. So far, it has faced massive resistance from the military establishment up to President Hindenburg.
+战争罪责调查委员会是一个断断续续的德国国会委员会，负责调查大战爆发和德国战败的原因。迄今为止，它一直面临着从军事机构到兴登堡总统的巨大阻力。
 
-- @restart: Restart the inquiry.
-- @root: Do nothing.
+- @restart: 重新开始调查。
+- @root: 什么也不做。
 - @easy_discard
 
 @restart
 on-arrival: war_guilt += 1
 
-What is the goal of this tribunal?
+这次调查的目标是什么？
 
-- @pure_history: To provide a historical record of the events of the war.
-- @rewrite: To revise the popular German histories and finally put to rest the "stabbed in the back" myth.
+- @pure_history: 对战争事件进行历史记录。
+- @rewrite: 修正流行的德国历史并最终打破“刀刺在背”的传说。
 
 @pure_history
 
-The history is being compiled, as it always has been.
+历史正在被编纂，一如既往。
 
 @rewrite
 on-arrival: pacifism += 1; nationalism -= 5*(1-dissent); pro_republic += 5*(1-dissent); coup_progress += 1
 
-Destroying the "stabbed in the back" myth, in addition to finally correcting the historical record, would do a great deal to improve our party's reputation. This is why it would be resisted by the military establishment every step of the way.
+除了纠正历史记录外，打破“刀刺在背”的传说将极大地改善我们党的声誉。正因为如此，军方才会步步抵制。
