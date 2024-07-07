@@ -1,29 +1,29 @@
-title: Banking Crisis
-subtitle: The collapse of the German banking system...
+title: 银行危机
+subtitle: 德国银行系统的崩溃……
 new-page: true
 on-arrival: banking_crisis_seen = 1; workers_kpd += 6; workers_nsdap += 5; unemployed += 3; crisis_urgency += 1
 tags: event
 view-if: year = 1931 and month >= 6 and spd_in_government = 0 and inflation < -1
 max-visits: 1
 
-= Banking Crisis
+= 银行危机
 
-The Darmstädter und Nationalbank, or Danat Bank, has collapsed! Along with it goes much of the German banking system. The cause seemed to be due to the government's pursuit of a customs union with Austria, which led to de facto international sanctions.
+达姆施塔特国家银行（*Darmstädter und Nationalbank*），简称达纳特银行，倒闭了！紧随着，德国一大部分银行系统也随之崩溃了。究其原因，似乎是由于政府寻求与奥地利建立关税同盟，这导致了事实上的国际制裁。
 
-This is a bourgeois dispute, but the costs will be borne by the proletariat. The people are facing ever-increasing hunger and poverty, and perhaps we are partly to blame.
+这是资产阶级内部的争端，但代价将由无产阶级承担。人民正面临着日益加剧的饥饿和贫困，也许我们也要负部分责任。
 
-- @austerity: Chancellor [+ chancellor +]'s response is, as always, more austerity.
-- @end_toleration: We are tired of austerity. End the toleration arrangement!
+- @austerity: [+ chancellor +]总理的回应是，也一直是紧缩。
+- @end_toleration: 紧缩紧缩，我们已经受够了紧缩。不再容忍这届内阁！
 
 @austerity
 on-arrival: welfare -= 1; workers_spd -= 3; unemployed_spd -= 3; pro_republic -= 3
 
-Chancellor [+ chancellor +] responds to the banking crisis with more cuts to welfare.
+[+ chancellor +]总理通过继续削减福利来回应这场危机。
 
 @end_toleration
 view-if: spd_toleration = 1
 on-arrival: next_election_time = time+3 if next_election_time >= time+3; next_election_month = month + 3 if next_election_time >= time+3; next_election_year = year if next_election_time >= time+3; next_election_year += 1 if next_election_month > 12; next_election_month -= 12 if next_election_month > 12; spd_in_government = 0; in_grand_coalition = 0; spd_toleration = 0;
 
-We are tired of [+ chancellor +]'s policy of austerity. After [+ chancellor +]'s attempt to use emergency powers to pass another welfare cut, we have worked with the other parties to reverse this policy. In response, the Reichstag has been dissolved, and new elections called.
+我们受够了[+ chancellor +]总理的紧缩政策。在[+ chancellor +]总理企图动用紧急权力来通过有一次福利削减的时候，我们与其他的党派合作，扭转了这一政策。这带来的结果是国会解散并召开新选举。
 
-New elections have been set for [+ next_election_month : month +] [+ next_election_year +].
+新一轮大选于[+ next_election_year +]年[+ next_election_month : month +]举行。
