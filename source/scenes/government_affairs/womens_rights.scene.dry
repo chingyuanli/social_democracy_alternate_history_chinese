@@ -1,4 +1,4 @@
-title: Women's Rights
+title: 妇女权利
 new-page: true
 is-card: true
 tags: govt_affairs
@@ -8,24 +8,24 @@ card-image: img/portraits/PfülfAntonie.jpg
 frequency: 50
 max-visits: 4
 
-= Women's Rights
+= 妇女权利
 
-According to the Constitution, women are equal to men, but this is not followed in practice. Women in the workforce are not paid equally for the same work, in addition to often being pushed out of employment after marriage. Men are still favored in marriage and family policy, and there are restrictions on women's rights in many other domains. And that is not to mention the overwhelming patriarchal culture present in Germany.
+根据宪法规定，男女平等，但在实践上却不是如此。除了婚后经常被挤出工作岗位之外，劳动妇女也不能同工同酬。在婚姻与家庭政策方面，男性仍旧占优势，妇女在许多其他领域的权利也受到了限制。这还没有算上德国根深蒂固的父权文化。
 
-For better or for worse, the Socialists stand virtually alone in supporting increased rights for women, and even within the party, the leadership does not consider it a priority. [? if spd_r < 50 : Unfortunately, women still disproportionately support the bourgeois parties. ?]
+无论好坏，我们几乎是唯一支持增加妇女权利的党派，而即便在党内，领导层也不认为这是一个优先事项。[? if spd_r < 50 : 同时十分遗憾的是，妇女支持资产阶级政党的比例仍然过高。 ?]
 
-- @labor: Institute policies that help women in the workforce.
-- @welfare: Improve welfare for single mothers and children.
-- @liberalize: Attempt to liberalize abortion laws.
-- @return: Do not enact any policies for now.
+- @labor: 制定支持劳动妇女的政策。
+- @welfare: 改善单身母亲与儿童的福利。
+- @liberalize: 尝试放宽堕胎法。
+- @return: 暂时不制定任何政策。
 - @easy_discard
 
 @labor
-subtitle: Paid maternal leave policies, equal pay policies, and so on.
+subtitle: 带薪产假、同工同酬政策等。
 on-arrival: womens_work = 1; womens_rights += 1; workers_spd -= 4 if unemployed > 15; new_middle_spd += 4*(1-dissent); workers_spd += 4*(1 - dissent);
 max-visits: 3
 
-These policies mean that our party is increasing in popularity among the "new women" who work outside the home. [? if unemployed > 15 : However, many male workers develop a backlash towards women in the workplace, especially given the rising unemployment. ?]
+这些政策使我们党在外出工作的“新女性”中越来越受欢迎。[? if unemployed > 15 : 然而，许多男性工人对劳动妇女产生了反感，尤其是在失业率上升的情况下。 ?]
 
 
 @welfare
@@ -33,20 +33,20 @@ subtitle: -1 budget
 choose-if: budget > 0
 on-arrival: welfare += 1; workers_spd += 5*(1-dissent); unemployed_spd += 5*(1-dissent); budget -= 1; womens_rights += 1; coalition_dissent += 1 if welfare >= 1 and unemployed >= 15
 
-We have increased welfare spending on women and children. [? if welfare >= 1 and unemployed >= 15 : Some of our coalition partners consider increased welfare spending profligate at this time. ?]
+我们对妇女和儿童增加了福利支出。[? if welfare >= 1 and unemployed >= 15 : 我们一些盟友认为目前增加福利开支是一种挥霍。 ?]
 
 
 @liberalize
 max-visits: 1
-subtitle: [? if progressive_coalition < 50 : This is unlikely to succeed; we do not have majority support. ?]
+subtitle: [? if progressive_coalition < 50 : 这不太可能成功，我们没有多数支持。 ?]
 go-to: liberalize_fail if progressive_coalition < 50; liberalize_success if progressive_coalition >= 50
 
 @liberalize_fail
 on-arrival: z_relation -= 5; coalition_dissent += 1; workers_spd += 3*(1-dissent); catholics_spd -= 5;
 
-Unfortunately, our proposal is voted down in the Reichstag, with the Catholic Center party (our long-time partners) speaking in particularly vehement opposition, and some of our own members breaking party discipline. The activists, feeling demoralized from this attempt, have decided to bide their time.
+很遗憾的是，我们的提案在国会中遭到了否决。天主教的中央党（我们的长期合作伙伴）发表了极为激烈的反对意见，我们党内的一些成员也违反党纪投下了反对票。活动家们因为这次失败的尝试士气低落，决定等待时机。
 
 @liberalize_success
 on-arrival: abortion_rights += 1; womens_rights += 1; coalition_dissent += 1; z_relation -= 8; catholics_spd -= 5; dvp_relation -= 5; workers_spd += 3*(1-dissent); new_middle_spd += 3*(1-dissent); workers_z += 3; new_middle_z += 3; old_middle_z += 3; old_middle_dnvp += 3; rural_dnvp += 3; workers_nsdap -= 5; new_middle_nsdap -= 5; old_middle_nsdap -= 5; rural_nsdap -= 5; unemployed_nsdap -= 5; unemployed_z += 3; unemployed_spd += 3*(1-dissent)
 
-With the support of a "progressive coalition" including the KPD and DDP, we have successfully passed a bill to legalize abortion in Germany! This has heartened our more progressive supporters, while hurting our relations with the Center Party. With the increasing political discourse around abortion, the religiously-oriented Center Party and DNVP have gained conservative votes at the expense of the NSDAP.
+在与共产党和民主党组成的“进步联盟”的支持下，我们成功地通过了堕胎合法化的法案！这让我们更进步的支持者感到欣慰，但也损害了我们与中央党的关系。围绕着堕胎问题的讨论越来越多，以宗教为导向的中央党和民族人民党获得了保守派的支持，纳粹党则被他们抛弃了。
