@@ -1,6 +1,6 @@
 title: 阿尔托纳的纳粹游行
 new-page: true
-subtitle: An SA demonstration, with the potential for violence
+subtitle: 可能发展为暴力事件的冲锋队游行
 tags: event
 view-if: year == 1932 and month == 6 and sa_banned == 0 and spd_prussia == 1
 max-visits: 1
@@ -27,17 +27,17 @@ go-to: allow_police_violence if prussian_police_loyalty <= 0.75; allow_police_no
 @allow_police_violence
 on-arrival: strife += 1; sa_strength += 50; kpd_relation -= 8; communist_coalition -= 1
 
-When the march arrives in Altona, they are immediately confronted by an angry crowd of communists and socialists, who throw objects at the Nazis. The police attempt to separate the two groups, to no avail. Gunshots are heard, reportedly from rooftop snipers (whom the police believe are communists). In response, the police fire into the surrounding buildings. Dozens are killed. All turn out to be civilians, and the reported snipers are never found.
+游行队伍抵达阿尔托纳的时候便立即遭到了一群愤怒的共产党人与社会主义者的围攻，他们开始向纳粹分子投掷物品。警察试图将两群人分开，但无济于事。现场听到了枪声，据说是来自屋顶的狙击手（警方认为他们是共产党）。作为回应，警察向周围的建筑物开火，并打死了数十人。打死的人最后发现都是平民，而狙击手却再也找不到了。
 
-This incident has been called "Altona Bloody Sunday" in the media. The Communists assail the incompetence of the police, who are supposedly under our command.
+这期事件在媒体中被称为“阿尔托纳的血色星期日”。共产党抨击我们警察的无能。
 
 @allow_police_no_violence
 on-arrival: sa_strength += 10
 
-When the march arrives in Altona, they are immediately confronted by an angry crowd of communists and socialists, who throw objects at the Nazis. The police attempt to separate the two groups, to no avail. Gunshots are heard, reportedly from rooftop snipers. The police manage to keep their cool, the shots stop, and the march disperses without further violence.
+游行队伍抵达阿尔托纳的时候便立即遭到了一群愤怒的共产党人与社会主义者的围攻，他们开始向纳粹分子投掷物品。警察试图将两群人分开，但无济于事。现场听到了枪声，据说是来自屋顶的狙击手。警察保持了冷静，枪声停止，游行队伍散去，没有发生进一步的暴力。
 
 
 @allow_no_police
 on-arrival: sa_strength += 80; rfb_strength += 50; strife += 1; kpd_relation -= 8; communist_coalition -= 1
 
-When the march arrives in Altona, they are immediately confronted by an angry crowd of communists and socialists, who throw objects at the Nazis. Gunshots are heard, reportedly from rooftop snipers. In response, the SA engage the surrounding crowd and fire at the surrounding buildings. Dozens are killed, mostly civilians. The Nazis recruit off their dead martyrs.
+游行队伍抵达阿尔托纳的时候便立即遭到了一群愤怒的共产党人与社会主义者的围攻，他们开始向纳粹分子投掷物品。现场听到了枪声，据说是来自屋顶的狙击手。作为回应，冲锋队开始与周围的人群交战并向周围的建筑物开火。数十人被打死，其中大部分是平民。纳粹分子将在此次事件中身亡的冲锋队员尊为烈士并开始大量招募。
