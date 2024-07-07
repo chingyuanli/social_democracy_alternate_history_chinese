@@ -1,37 +1,37 @@
-title: Businesses Lose Confidence
-subtitle: Big businesses are losing confidence in our government's policies.
+title: 企业失去信心
+subtitle: 大企业正在对我们政府的政策失去信心。
 view-if: (capital_strike_progress >= 6 and capital_strike_progress < 10 and budget > -5) and spd_in_government
 new-page: true
 max-visits: 1
 on-arrival: unemployed += 2; new_middle_spd -= 6; old_middle_spd -= 6; rural_spd -= 5; workers_spd -= 4; unemployed_spd -= 4; dvp_relation -= 6
 tags: event
 
-= Businesses Lose Confidence
+= 企业失去信心
 
-Because of our government's policies, which are perceived as anti-business, the capitalists are reducing their investment and laying off workers. This has the immediate effect of raising unemployment and dissent against our government, especially among the middle class.
+因为我们的那些被看作反企业的政策，资本家们正在降低他们的投资并使工人下岗。这使失业率立刻增高，同时对我们政府的异议也变多了，主要来自中产阶级。
 
-The business community has a variety of suggestions as to how we might improve the business environment.
+企业家群体提出了一系列我们也许可以改善营商环境的建议。
 
-- @taxes: Cut taxes for the upper brackets.
-- @welfare: Reduce welfare and social spending.
-- @nothing: We will not take any action for now.
-- @watch: Just watch us. The economy *will* improve.
+- @taxes: 为上层减税。
+- @welfare: 降低福利与社会支出。
+- @nothing: 我们现在不会采取任何行动。
+- @watch: 你们看着就行了，经济*会*变好的。
 
 @taxes
 on-arrival: upper_tax_rates -= 1; budget -= 1; capital_strike_progress -= 1; unemployed -= 1; new_middle_spd += 5*(1-dissent); old_middle_spd += 4*(1-dissent); kpd_coalition_dissent += 1; kpd_relation -= 5; left_dissent += 5
 
-Cutting taxes improves our relationship with the capitalists.
+减税改善了我们与资本家的关系。
 
 @welfare
 on-arrival: welfare -= 1; budget += 1; capital_strike_progress -= 2; new_middle_spd += 4*(1-dissent); old_middle_spd += 4*(1-dissent); workers_spd -= 5; unemployed_spd -= 5; unemployed -= 1; left_dissent += 5; labor_dissent += 5; center_dissent += 5; kpd_coalition_dissent += 1; inflation -= 1;
 
-Cutting welfare improves our relationship with the capitalists, but it hurts our working-class base.
+削减福利改善了我们与资本家的关系，但伤害到了我们的工人阶级票仓。
 
 
 @nothing
 
-Realistically, there is nothing we can do.
+现实地说，我们没有什么能做的。
 
 @watch
 
-Presumably, we have an economic plan that will lead us out of the crisis. The capitalists do not trust us, but we will show them eventually.
+我们大概是有一个能带领我们走出危机的经济方案。资本家不信任我们，但是我们会让他们看到经济好转的。
