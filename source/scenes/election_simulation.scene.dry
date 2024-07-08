@@ -309,11 +309,11 @@ Other: [+ other_r +]
 
 **可能的联合政府**
 
-Weimar Coalition (SPD + Z + DDP): [+ weimar_coalition +]
+魏玛联合 (SPD + Z + DDP): [+ weimar_coalition +]
 
-Grand Coalition (SPD + Z + BVP + DDP + DVP): [+ grand_coalition +]
+大联合 (SPD + Z + BVP + DDP + DVP): [+ grand_coalition +]
 
-Bourgeois Coalition (Z + BVP + DDP + DVP + Others): [+ bourgeois_coalition +]
+资产阶级联合 (Z + BVP + DDP + DVP + 其他): [+ bourgeois_coalition +]
 
-Right-wing Coalition (Z + BVP + DVP + Others + DNVP): [+ right_coalition +]
+右翼联合 (Z + BVP + DVP + 其他 + DNVP): [+ right_coalition +]
 
