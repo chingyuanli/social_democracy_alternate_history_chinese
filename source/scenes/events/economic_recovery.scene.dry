@@ -1,11 +1,11 @@
-title: Global Economic Recovery
-subtitle: Finally, the world economy is leaving the worst throes of the depression.
+title: 全球经济恢复
+subtitle: 终于，全球经济走出了萧条最严重的时期。
 view-if: year = 1933 and month >= 6
 on-arrival: unemployed -= 3 if unemployed > 25; unemployed -= 2 if unemployed > 15; unemployed -= 1 if unemployed > 10; workers_nsdap -= 5; unemployed_nsdap -= 5; inflation += 1.5
 new-page: true
 max-visits: 1
 tags: event
 
-= Global Economic Recovery
+= 全球经济恢复
 
-Finally, countries across the world seem to be recovering from the worst effects of the Great Depression. It is an uneven recovery, but we seem to be exiting the worst period of crisis. [? if unemployed >= 10: Our unemployment has fallen. ?]
+终于，全世界各国都似乎从大萧条最严重的后果中恢复过来了。复苏速度并不均衡，但我们似乎正在走出最严重的危机时期。[? if unemployed >= 10: 我们的失业率也随之下降了。 ?]
