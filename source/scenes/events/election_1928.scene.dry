@@ -1,4 +1,4 @@
-title: Reichstag Elections
+title: 国会选举
 new-page: true
 tags: event
 priority: -1
@@ -8,30 +8,30 @@ set-jump: post_election_1928
 
 # the low priority means that this event is only seen after all other events are resolved for the month.
 
-= Elections, [+ month : month +] [+ year +]
+= 国会选举，[+ year +]年[+ month : month +]
 
-The Reichstag elections are to be held now.
+国会选举即将召开。
 
-- @election_algorithm: May we do our best...
+- @election_algorithm: 让我们全力以赴……
 - @cancel_elections
 
 @cancel_elections
-title: We cannot hold the elections now. Cancel the elections.
-subtitle: This is an anti-democratic move that may backfire.
+title: 我们现在不能召开选举。取消本次选举。
+subtitle: 这个举动是反民主的，可能会产生负面后果。
 view-if: in_emergency_government == 1 and president == "Braun"
 
-Since we are currently ruling as part of an emergency government, we may use quasi-constitutional trickery to significantly delay these elections, and continue governing via Article 48. This is likely to be extremely unpopular both with our base and with the other parties. However, this may be necessary to prevent the extremists from gaining power.
+因为我们现在正在通过紧急政府执政，我们可以用游走在宪法边缘的手段来大幅度推迟选举，并继续通过宪法第四十八条执政。我们的支持者与其他党派很可能会对此极为不满。然而，这为了防止极端分子夺权可能是必要的。
 
-- @cancel_elections_2: Yes, do it.
-- @election_algorithm: No, let's hold the elections.
+- @cancel_elections_2: 就这么做。
+- @election_algorithm: 不了，还是召开选举吧。
 
 @cancel_elections_2
 on-departure: next_election_year = next_election_year + 1; next_election_time = time + 12; pro_republic -= 10; dvp_relation -= 8; z_relation -= 8; ddp_relation -= 10; kpd_relation -= 8; coup_progress += 2; workers_spd -= 4; new_middle_spd -= 5; old_middle_spd -= 5; rural_spd -= 5; catholics_spd -= 5; unemployed_spd -= 5; coup_progress += 2 if nsdap_normalized >= 0.3; coup_progress += 2 if nsdap_normalized + dnvp_normalized >= 0.5
 achievement: ausnahmezustand
 
-Fine. President [+ president +] has taken the unprecedented step of canceling these elections. New elections are scheduled for [+ next_election_month : month +] [+ next_election_year +].
+好吧。[+ president +]总统史无前例地取消了选举。 新一轮大选于[+ next_election_year +]年[+ next_election_month : month +]举行。
 
-Let us hope this does not backfire.
+希望不会因此有坏事发生。
 
 @post_election_1928
 on-arrival: {!
@@ -118,7 +118,7 @@ Q.reichswehr_goal_completed = 0;
 on-departure: nazi_urgency = 1 if (nazi_urgency == 0 and nsdap_r >= 15)
 go-to: coalition_menu
 
-**Election results:**
+**选举结果**
 
 SPD: [+ spd_r +]%
 
@@ -134,23 +134,23 @@ DNVP: [+ dnvp_r +]%
 
 NSDAP: [+ nsdap_r +]%
 
-Other (mostly conservatives): [+ other_r +] %
+其他（主要是保守派）: [+ other_r +] %
 
-**Potential coalitions:**
+**可能的联合政府**
 
-Weimar Coalition (SPD + Z + DDP): [+ weimar_coalition +]%
+魏玛联合 (SPD + Z + DDP): [+ weimar_coalition +]%
 
-Grand Coalition (SPD + Z + BVP + DDP + DVP): [+ grand_coalition +]%
+大联合 (SPD + Z + BVP + DDP + DVP): [+ grand_coalition +]%
 
-Bourgeois Coalition (Z + BVP + DDP + DVP + Others): [+ bourgeois_coalition +]%
+资产阶级联合 (Z + BVP + DDP + DVP + 其他): [+ bourgeois_coalition +]%
 
-Right-wing Coalition (Z + BVP + DVP + Others + DNVP): [+ right_coalition +]%
+右翼联合 (Z + BVP + DVP + 其他 + DNVP): [+ right_coalition +]%
 
-[? if nazi_urgency <= 1 and nsdap_r >= 15 : The rapid rise in NSDAP votes is extremely worrying. Many had believed that the party was moribound; now, some of us consider it to be the greatest threat to democracy in Germany. ?]
+[? if nazi_urgency <= 1 and nsdap_r >= 15 : 纳粹党选票的迅速上升极其令人担忧。很多人曾经以为这个政党已经奄奄一息了，但我们中的一些人现在将其看成是德国民主最大的威胁。 ?]
 
-[? if anti_democratic_coalition >= 50 : Together, the anti-democratic KPD, DNVP, and NSDAP have a majority in the Reichstag. A stable governing majority will be almost impossible. ?]
+[? if anti_democratic_coalition >= 50 : 反民主的共产党、民族人民党和纳粹党在国会中获得了多数议席。稳定的执政多数基本不可能了。 ?]
 
-There are some potential coalition arrangements.
+有一些潜在的联合安排。
 
 @coalition_menu
 
@@ -168,9 +168,9 @@ There are some potential coalition arrangements.
 
 
 @popular_front_coalition
-title: A new "Popular Front" coalition?
+title: 新的“人民阵线”？
 subtitle: SPD + KPD + Z + DDP ([+ popular_front_coalition +]%)
-unavailable-subtitle: SPD + KPD + Z + DDP ([+ popular_front_coalition +]%) - [? if kpd_relation < 50: We do not have good enough relations with the KPD. ?][? if z_relation < 50: We do not have good enough relations with the Center Party. ?][? if communist_coalition < 3 : The Communists are unwilling to compromise at all. ?]
+unavailable-subtitle: SPD + KPD + Z + DDP ([+ popular_front_coalition +]%) - [? if kpd_relation < 50: 我们与共产党的关系不够好。 ?][? if z_relation < 50: 我们与中央党的关系不够好。 ?][? if communist_coalition < 3 : 共产党完全不愿意作出妥协。 ?]
 view-if: popular_front_coalition >= 50
 choose-if: kpd_relation >= 50 and z_relation >= 50 and ddp_relation >= 50 and communist_coalition >= 3
 
@@ -178,7 +178,7 @@ Could we really form a coalition that included both the Center and the Communist
 
 The far-right might attempt a coup, if such a coalition were formed.
 
-- @popular_front_2: Form the Popular Front!
+- @popular_front_2: 组成人民阵线！
 
 @popular_front_2
 
@@ -506,36 +506,36 @@ There is no path to a majority government for now. The scheming around President
 # if NSDAP is largest party and Hindenburg is president, then Hindenburg appoints Hitler chancellor.
 
 @spd_majority
-title: SPD majority alone
+title: 社民党多数
 subtitle: SPD: [+ spd_r +]%
 view-if: spd_r >= 50
 on-arrival: chancellor = "Empty"; chancellor_party = "SPD"; spd_in_government = 1; in_spd_majority = 1; pro_republic += 5; foreign_minister_party = "SPD"; interior_minister_party = "SPD"; justice_minister_party = "SPD"; labor_minister_party = "SPD"; reichswehr_minister_party = "SPD"; economic_minister_party = "SPD"; finance_minister_party = "SPD"; agriculture_minister_party = "SPD"; reichswehr_loyalty -= 0.05; 
 achievement: majority_party
 
-Finally, the SPD can govern alone! Our long campaign of electioneering has paid off. We do not need to worry about coalition government; anything is possible. 
+终于，社民党可以单独执政了！我们长期的竞选活动已见成效。我们不必担心联合政府了，一切皆有可能。 
 
-Who should be chancellor?
+该由谁来担任总理呢？
 
-- @braun_majority_chancellor: Otto Braun for Chancellor.
-- @breitscheid_majority_chancellor: Rudolf Breitscheid for Chancellor.
-- @muller_majority_chancellor: Hermann Müller for Chancellor.
+- @braun_majority_chancellor: 让奥托·布劳恩来担任总理。
+- @breitscheid_majority_chancellor: 让鲁道夫·布赖特沙伊德来担任总理。
+- @muller_majority_chancellor: 让赫尔曼·穆勒来担任总理。
 
 @braun_majority_chancellor
 on-arrival: chancellor = "Braun"
 
-[? if president == "Braun": Our experts have checked the constitution, and have discovered that there is no specific prohibition against the Chancellor also being the President (the President may not be a member of the Reichstag; there is no law saying that the Chancellor must be a member of the Reichstag). Thus, we have Chancellor-President Otto Braun. ?]
-[? if president != "Braun": Otto Braun has become chancellor of the SPD majority. ?]
+[? if president == "Braun": 我们的法律专家研读了宪法，发现并没有明确规定说总理不得由总统来担任（总统不得是国会议员，但没有法律规定总理必须是国会议员）。因此，奥托·布劳恩将担任总统兼总理。 ?]
+[? if president != "Braun": 奥托·布劳恩成为了社民党多数政府的总理。 ?]
 
 @breitscheid_majority_chancellor
 on-arrival: chancellor = "Breitscheid"
 
-Rudolf Breitscheid has become chancellor of the SPD majority.
+鲁道夫·布赖特沙伊德成为了社民党多数政府的总理。
 
 @muller_majority_chancellor
 view-if: muller_dead = 0
 on-arrival: chancellor = "Müller"
 
-Hermann Müller has become chancellor of the SPD majority.
+赫尔曼·穆勒成为了社民党多数政府的总理。
 
 
 
