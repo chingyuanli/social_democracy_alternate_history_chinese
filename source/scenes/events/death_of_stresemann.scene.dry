@@ -1,8 +1,8 @@
-title: The Death of Gustav Stresemann
+title: 古斯塔夫·施特雷泽曼逝世
 view-if: year = 1929 and month >= 9
 frequency: 1000
 max-visits: 1
 tags: event
 on-arrival: stresemann_dead = 1; dvp_relation -= 5
 
-Gustav Stresemann, leader of the DVP, has died. He was the primary force driving the party to support democracy; without him, the democratic forces in the Republic will be so much weaker.
+人民党的党首古斯塔夫·施特雷泽曼去世了。他是推动该党支持民主的重要力量，没有了他，共和国的民主力量将被大大削弱。
