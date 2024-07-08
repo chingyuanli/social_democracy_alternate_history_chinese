@@ -1,4 +1,4 @@
-title: Civil War
+title: 内战
 audio: music/communist/A_las_barricadas.ogg
 on-arrival: {!
 Q.rb_strength = Math.round(Q.rb_strength);
@@ -85,34 +85,34 @@ if (Q.total_power >= Q.enemy_power*0.95) {
 !}
 go-to: war_menu
 
-= The Array of Forces
+= 战斗双方
 
-Our enemies are the nationalist Stahlhelm, with [+ sh_strength +] thousand troops, and the Nazi SA, with [+ sa_strength +] thousand troops. The loyalties of the Reichswehr, with its [+ reichswehr_strength +] thousand regular soldiers, and Prussian police, with [+ prussian_police_strength +] thousand members, are unclear.
+我们的敌人有民族主义的钢盔团（[+ sh_strength +]K）和纳粹的冲锋队（[+ sa_strength +]K）。我们并不清楚国防军（[+ reichswehr_strength +]K）和普鲁士警察（[+ prussian_police_strength +]K）的忠诚。
 
-[? if chancellor_party == "KPD" or president == "Thälmann" : The KPD's paramilitary, the RFB, is leading the battle, and we are their co-combatants. ?]
+[? if chancellor_party == "KPD" or president == "Thälmann" : 共产党的准军事组织红色阵线正在领导这场战斗，我们与他们并肩作战。 ?]
 
-On our side, we have the Reichsbanner, at [+ rb_strength +] thousand members. [? if dissent > 0.15 and dissent <= 0.25: It is somewhat weakened by dissent within the party, and some members choose not to fight. ?][? if dissent > 0.25 and dissent < 0.5: It is weakened by dissent within the party, and many members choose not to fight. ?][? if dissent >= 0.5: It is heavily weakened by dissent within the party, and a substantial portion of members choose not to fight. ?]
+在我们这边战斗的是国旗团（[+ rb_strength +]K）。[? if dissent > 0.15 and dissent <= 0.25: 由于党内存在异议，一些党员选择不参加战斗，这在一定程度上削弱了国旗团的力量。 ?][? if dissent > 0.25 and dissent < 0.5: 由于党内存在异议，很多党员选择不参加战斗，这削弱了国旗团的力量。 ?][? if dissent >= 0.5: 由于党内存在异议，一大部分党员选择不参加战斗，这大大削弱了国旗团的力量。 ?]
 
-[? if rb_militancy < 0.25 : Unfortunately, the Reichsbanner are poorly trained and equipped, and will not be able to stand against our more militarized opponents. ?][? if rb_militancy >= 0.25 and rb_militancy < 0.5 : We have spent some resources training and equipping the Reichsbanner. Let us hope our people can persist. ?][? if rb_militancy >= 0.5 : We have spent quite a great deal of resources on turning the Reichsbanner into a fighting force. Let us hope that they survive. ?]
+[? if rb_militancy < 0.25 : 不幸的是，国旗团的训练和装备都很差，无法与我们军事化程度更高的敌人抗衡。 ?][? if rb_militancy >= 0.25 and rb_militancy < 0.5 : 我们在训练与装备国旗团上花费了一定资源。希望我们的成员可以坚持下去。 ?][? if rb_militancy >= 0.5 : 我们花费了大量资源将国旗团转变成一支战斗力量。但愿他们能活下来。 ?]
 
-What else do we have?
+我们还能干什么？
 
 # note: many scenarios lead to civil war. This calculates the array of forces, and the possible outcomes.
 
 @war_menu
 
-- @rw_help: Appeal to the Reichswehr to stand down.
-- @kpd_help: Call for support from the Communists.
-- @general_strike: Call a general strike!
-- @loyal_police: Call up the loyal portions of the police.
-- @war_outcome: Now, the battle...
+- @rw_help: 呼吁国防军保持中立。
+- @kpd_help: 寻求共产党的帮助。
+- @general_strike: 号召总罢工！
+- @loyal_police: 召集忠诚的警察。
+- @war_outcome: 战斗开始了……
 
 @rw_help
 max-visits: 1
 go-to: war_menu
 on-arrival: war_choices += 1
 
-We have urged the Reichswehr to stand down, to avoid killing their countrymen. [? if reichswehr_loyalty < 0.2 : Unfortunately, few heed our calls; the Reichswhere detest us. ?][? if reichswehr_loyalty >= 0.2 and reichswehr_loyalty < 0.4 : Some officers and troops heed our calls to not fight against us. Some even join us. ?][? if reichswehr_loyalty >= 0.4 and reichswehr_loyalty < 0.6 : The Reichswehr is split. Many avoid taking a side, or join our side. ?][? if reichswehr_loyalty >= 0.6 : Surprisingly, the majority of the Reichswehr is on our side! Our preparations have worked. ?]
+我们呼吁国防军保持中立，以避免杀害他们的同胞。[? if reichswehr_loyalty < 0.2 : 不幸的是，很少有人理会我们的呼吁，国防军对我们深恶痛绝。 ?][? if reichswehr_loyalty >= 0.2 and reichswehr_loyalty < 0.4 : 一部分官兵听从了我们的号召，不与我们作对。还有些甚至加入了我们。 ?][? if reichswehr_loyalty >= 0.4 and reichswehr_loyalty < 0.6 : 国防军分裂了。许多人避免站队，或者加入我们这一边。 ?][? if reichswehr_loyalty >= 0.6 : 出乎意料的是，大部分国防军的人都站在我们这边！我们的准备工作奏效了。 ?]
 
 @kpd_help
 max-visits: 1
@@ -120,16 +120,16 @@ view-if: chancellor_party != "KPD" and president != "Thälmann"
 go-to: war_menu
 on-arrival: war_choices += 1
 
-There are [+ rfb_strength +] thousand fighters with the Communist RFB, in addition to the workers who support the KPD.
+在支持共产党的工人的基础上，红色阵线还有[+ rfb_strength +]K名战斗员。
 
-[? if kpd_relation >= 60 : The KPD is entirely on our side, owing to our good relations.. ?][? if kpd_relation < 60 and kpd_relation >= 45 : Most of the KPD is on our side, due to their good relations with us. ?][? if kpd_relation < 45 : The KPD does not support us. ?]
+[? if kpd_relation >= 60 : 由于我们的良好关系，共产党完全站在我们这边。 ?][? if kpd_relation < 60 and kpd_relation >= 45 : 由于我们的良好关系，大部分共产党员站在我们这边。 ?][? if kpd_relation < 45 : 共产党并不支持我们。 ?]
 
 @general_strike
 max-visits: 1
 go-to: war_menu
 on-arrival: war_choices += 1
 
-A general strike stopped the Kapp Putsch in 1920, and it can stop fascism today. [? if normalized_workers_total > 70 : The workers are largely united with us. ?][? if normalized_workers_total >= 50 and normalized_workers_total <= 70 : There is some dissent within labor, but a majority of workers support the general strike. ?][? if normalized_workers_total > 30 and normalized_workers_total < 50 : However, there is substantial dissent within labor, and less than half support the general strike. ?][? if normalized_workers_total <= 30 : However, labor is deeply divided, and most workers do not heed the call to strike. ?]
+总罢工在1920年阻止了卡普政变，在今天也能阻止法西斯主义。[? if normalized_workers_total > 70 : 工人基本上与我们团结一致。 ?][? if normalized_workers_total >= 50 and normalized_workers_total <= 70 : 工人内部有一些反对意见，但大部分工人响应了总罢工。 ?][? if normalized_workers_total > 30 and normalized_workers_total < 50 : 然而，工人内部有大量反对意见，只有不到一半的工人响应了总罢工。 ?][? if normalized_workers_total <= 30 : 然而，工人内部分歧严重，大部分工人不响应总罢工的号召。 ?]
 
 
 @loyal_police
@@ -138,7 +138,7 @@ go-to: war_menu
 on-arrival: war_choices += 1
 view-if: spd_prussia = 1
 
-Since we still control the Prussian government, we can call upon the Prussian police. [? if prussian_police_loyalty < 0.4 : Unfortunately, the police are politically unreliable at best. ?][? if prussian_police_loyalty >= 0.4 and prussian_police_loyalty < 0.65 : In this crucial hour, the Prussian police are split, with about half actively supporting our efforts. ?][? if prussian_police_loyalty >= 0.65 : Most join in supporting our efforts. Our efforts in cultivating republican loyalties in the police have proven their worth. ?]
+因为我们仍然控制着普鲁士州政府，我们可以向普鲁士警察求助。[? if prussian_police_loyalty < 0.4 : 不幸的是，警察说得最好听也是极为不可靠的。 ?][? if prussian_police_loyalty >= 0.4 and prussian_police_loyalty < 0.65 : 在这个关键时刻，普鲁士警察分裂了，大约一半的人支持我们。 ?][? if prussian_police_loyalty >= 0.65 : 大多数警察支持我们。我们在警察部队中培养亲共和国势力的努力证明了它的价值。 ?]
 
 
 
@@ -157,26 +157,26 @@ go-to: defeat if total_defeat = 1; long_war if long_war = 1; republic_victory if
 
 @defeat
 
-= Total Defeat
+= 全军覆没
 
-Our forces are no match for those of the reactionaries. Reichsbanner fighters are quickly overpowered by the forces of the Stahlhelm, SA, and Reichswehr. Many are killed before the rest surrender. Our remaining leaders flee the country or face execution, as the reactionaries take absolute power over Germany.
+我们的部队不是反动派的对手。国旗团的战士们很快就被钢盔团、冲锋队和国防军的部队打得落花流水。许多人被杀害，剩下的则选择投降。随着反动派夺取了德国的绝对权力，我们剩下的领导人要么逃离德国，要么面临处决。
 
-Our resistance will be recorded in the history books, and in the future, our names will be honored. But for now, all is lost.
+我们的抵抗会被记载在历史书上，我们的名字将被后世传唱。但是现在，我们一败涂地。
 
-- @game_over: Game over.
+- @game_over: 完。
 
 @long_war
 go-to: long_war_intervention if resist_coup == 0; game_over_menu if resist_coup == 1
 
-= Long War
+= 全面内战
 
-The initial phase of the action ends, and somehow, both sides remain standing.
+战斗的初始阶段结束了，但不知何故，双方都尚未被打垮。
 
-The war settles into fixed battle lines. This will not be a quick coup, but a long civil war. The nation will destroy itself before it can be rebuilt again.
+战线开始僵持。这不会是一场快速的政变，而会是一场漫长的内战。国家在重建之前，首先会自我毁灭。
 
 @game_over_menu
 
-While we might want to call for foreign assistance, the foreign powers see the "Prussian Coup" as a purely internal matter.
+我们虽然想寻求国外援助，其他国家将“普鲁士政变”看作纯粹的内部争端。
 
 - @game_over
 
@@ -184,43 +184,43 @@ While we might want to call for foreign assistance, the foreign powers see the "
 
 @long_war_intervention
 
-- @west_aid: Perhaps we can receive aid from the Western powers, France and Britain.
-- @soviet_aid: Perhaps we can receive aid from the Soviet Union.
-- @east_aid: Perhaps our eastern neighbors, Poland and Czechoslovakia, can help us. If they know anything, they do not want fascists coming to power in Germany.
-- @game_over: Game over.
+- @west_aid: 也许我们可以从法国和英国两大西方列强寻求支援。
+- @soviet_aid: 也许我们可以从苏联寻求支援。
+- @east_aid: 也许我们东边的邻居波兰和捷克斯洛伐克能支援我们。他们肯定不希望法西斯分子在德国掌权。
+- @game_over: 完。
 
 @west_aid
 choose-if: west_relation >= 2
-unavailable-subtitle: Our relations are not strong enough.
+unavailable-subtitle: 我们的关系不够友好。
 on-arrival: west_aid += 1
 max-visits: 1
 go-to: long_war_intervention
 
-We send a call for help to the West, but their governments are divided on whether or not to support us. We have to survive on our own until they make a decision.
+我们向西面发送了援助请求，但英法两国的政府在是否支援我们这一问题上意见不一。在他们做出决定之前，我们只能靠自己了。
 
 @soviet_aid
 choose-if: (soviet_relation >= 1 and kpd_relation >= 50) or (kpd_relation >= 75)
 on-arrival: soviet_aid += 1
-unavailable-subtitle: Our relations are not strong enough.
+unavailable-subtitle: 我们的关系不够友好。
 max-visits: 1
 go-to: long_war_intervention
 
-We send a call for help to the Soviet Union. The KPD receives the bulk of the aid, while the Reichsbanner and our loyal military units are left floundering. If we win, this does not bode well for our future.
+我们向苏联发送了援助请求。共产党得到了大部分援助，而国旗团与忠诚的军队则在苦苦挣扎。就算我们赢了，我们的未来也好不到哪里去。
 
 @east_aid
 choose-if: east_relation >= 2
 on-arrival: east_aid += 1
-unavailable-subtitle: Our relations are not strong enough.
+unavailable-subtitle: 我们的关系不够友好。
 max-visits: 1
 go-to: long_war_intervention
 
-Poland and Czechoslovakia are largely too absorbed in their own problems to be of much help, but weapons and volunteers filter through the parts of the borders that we control.
+波兰和捷克斯洛伐克基本上都沉浸在自己的问题中，帮不上什么忙，但从我们控制的边境地区送来了武器与志愿者。
 
 @republic_victory
 
-= Victory for the Republic
+= 共和国的胜利
 
-The battle lines hold, and the SA, Stahlhelm, and pro-coup Reichswehr forces are defeated. Today, the forces of the republic prevail over the fascists and the reactionaries. There is a new revolution in Germany. Let us hope it produces a longer-lasting peace than the previous one.
+我们稳住了战线，冲锋队、钢盔团和支持政变的国防军被击垮了。今天，共和国的力量战胜了法西斯和反动派。德国发生了一场新的革命。让我们希望它能带来比前一次革命更持久的和平。
 
-- @game_over: Game over.
+- @game_over: 完。
 
