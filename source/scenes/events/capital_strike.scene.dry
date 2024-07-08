@@ -1,5 +1,5 @@
 title: 资本家罢市
-subtitle: Germany's industries are idling...
+subtitle: 德国的工业停摆了……
 view-if: (capital_strike_progress >= 10 or budget <= -5) and spd_in_government
 new-page: true
 max-visits: 1
