@@ -1,8 +1,8 @@
-title: The Death of Paul Levi
+title: 保罗·列维去世
 view-if: year == 1930 and month >= 2
 frequency: 1000
 max-visits: 1
 on-arrival: levi_dead = 1; n_advisors -= 1 if levi_advisor == 1; levi_advisor = 0
 tags: event
 
-Paul Levi, a leader of the left wing of our party, has died in an unfortunate accident. He will be missed.
+我们党的左派领导人保罗·列维因为一起不幸的意外去世了。我们会永远怀念他的。
