@@ -1,4 +1,4 @@
-title: Capital Strike
+title: 资本家罢市
 subtitle: Germany's industries are idling...
 view-if: (capital_strike_progress >= 10 or budget <= -5) and spd_in_government
 new-page: true
@@ -6,11 +6,11 @@ max-visits: 1
 on-arrival: unemployed += 5; workers_spd*= 0.7; new_middle_spd -= 15; old_middle_spd -= 15; unemployed_spd*=0.7; rural_spd -= 15; pro_republic -= 15; capital_strike_seen = 1; z_relation -= 10; dvp_relation -= 10; workers_nsdap += 8; unemployed_nsdap += 10; new_middle_nsdap += 15; old_middle_nsdap += 15; rural_nsdap += 15
 tags: event
 
-= Capital Strike
+= 资本家罢市
 
-Our policies have greatly angered the capitalists. Investment has fallen, and factories are idling, preventing the workers from fulfilling their jobs. Meanwhile, the bourgeois press is a constant chorus of venomous invective directed at us and our economic policies.
+我们的政策极大地激怒了资本家，他们纷纷停止投资，并让工厂停工，不让工人工作。与此同时，资产阶级报刊不约而同地开始不断对我们和我们的经济政策进行恶毒的抨击。
 
-What can we do?
+我们能做什么？
 
 - @seize
 - @capital_controls
@@ -18,35 +18,35 @@ What can we do?
 - @nothing
 
 @seize
-title: Empower workers to seize the factories!
-unavailable-subtitle: [? if left_strength <= reformist_strength + neorevisionist_strength : The bulk of the party does not support this radical action. ?] [? if judicial_reform < 3 : The judiciary would oppose this action. ?] [? if rb_militancy < 0.25 : If we increased the strength of our paramilitary forces, perhaps we could do this. ?] [? if works_councils < 1 : We need the support of the works councils first. ?]
+title: 赋予工人夺取工厂的权力！
+unavailable-subtitle: [? if left_strength <= reformist_strength + neorevisionist_strength : 党内的大多数并不支持这一激进的行为。 ?] [? if judicial_reform < 3 : 司法部门绝不会允许的。 ?] [? if rb_militancy < 0.25 : 如果我们提升我们准军事组织的实力的话，也许可以做到。 ?] [? if works_councils < 1 : 我们首先需要工人委员会的支持。 ?]
 choose-if: left_strength > reformist_strength + neorevisionist_strength and (judicial_reform >= 3 or rb_militancy >= 0.25) and works_councils >= 1
 on-arrival: nationalization_progress += 1; coup_progress += 6; unemployed -= 2; unemployed -= 1 if works_councils >= 3; works_program += 1; workers_spd += 10*(1-dissent); unemployed_spd += 10*(1-dissent); coalition_dissent += 2; dvp_relation -= 4; workers_nsdap -= 8*(1-dissent); unemployed_nsdap -= 8*(1-dissent); left_strength += 15; reformist_dissent += 10; left_dissent -= 10; factory_takeovers += 1
 
-If the capitalists are going to attack us, then we must hit them back. We have empowered the workers to seize and take full control of the factories that the capitalists have idled. The fascists, of course, call us thieves and looters.
+如果资本家要对我们发起攻击，那我们就必须发起还击。我们给了工人占领并完全掌管资本家闲置的工厂的权力。当然，法西斯分子称我们为小偷和抢劫犯。
 
 
 @capital_controls
-title: Enact capital controls to lessen the impact.
+title: 实行资本管制以减轻影响。
 choose-if: judicial_reform >= 2
-unavailable-subtitle: The judiciary would never allow this.
+unavailable-subtitle: 司法部门绝不会允许的。
 on-arrival: unemployed -= 1.5; workers_spd += 6*(1-dissent); unemployed_spd += 6*(1-dissent);
 
-Capital controls might blunt some of the worst economic components of the capital strike.
+实行资本管制也许能削弱此次罢市带来的最坏的一些影响。
 
 
 
 @propaganda
-title: Launch a propaganda campaign blaming the capitalists for the crisis.
-subtitle: -1 resources
+title: 开展宣传活动，将危机归咎于资本家。
+subtitle: -1资源
 choose-if: (radio >= 2 or commercialized_media >= 3) and resources >= 1
-unavailable-subtitle: [? if radio < 2 and commercialized_media < 3 : We have not built up our media enough. ?] [? if resources < 1: We do not have enough resources. ?]
+unavailable-subtitle: [? if radio < 2 and commercialized_media < 3 : 我们的媒体建设还不够完善。 ?] [? if resources < 1: 我们没有足够资源。 ?]
 on-arrival: workers_spd += 7*(1-dissent); new_middle_spd += 6*(1-dissent); unemployed_spd += 6*(1-dissent); pro_republic += 5*(1-dissent); resources -= 1
 
-We launch a counter-propaganda campaign to blame the economic crisis on the capitalists, using all of our media channels to do so. Because of our existing media framework, this is moderately successful in directing popular criticisms towards the capitalists and away from us.
+我们利用我们所有的媒体渠道发起了一场宣传活动，将经济危机归咎于资本家。由于我们现有的媒体规模，这在把民众的矛头从我们转向资本家这方面取得了一定成功。
 
 
 @nothing
-title: There is nothing we can do.
+title: 我们无能为力。
 
-There is nothing we can do that is within constitutional and legal bounds.
+在现有的法律框架下，我们做不了什么。
