@@ -1,4 +1,4 @@
-title: The Death of Hermann Müller
+title: 赫尔曼·穆勒逝世
 view-if: year = 1931 and month >= 3
 frequency: 1000
 max-visits: 1
@@ -10,39 +10,38 @@ on-arrival: muller_dead = 1; n_advisors -= 1 if muller_advisor == 1; muller_advi
 on-arrival: muller_died_in_office = 1
 # TODO: achievement for muller dying in office
 
-Chancellor Hermann Müller has died while in office. He will be greatly missed. But now, we must select a new Chancellor.
+赫尔曼·穆勒总理在任上去世了。我们会永远怀念他的。但现在，我们需要选择一个新总理。
 
-- @braun_chancellor: Otto Braun (SPD) for Chancellor.
-- @wels_chancellor: Otto Wels (SPD) for Chancellor.
-- @breitscheid_chancellor: Rudolf Breitscheid (SPD) for Chancellor.
-- @bruning_chancellor: Let Heinrich Bruning of the Center Party become Chancellor.
+- @braun_chancellor: 选择奥托·布劳恩作为总理。
+- @wels_chancellor: 选择奥托·韦尔斯作为总理。
+- @breitscheid_chancellor: 选择鲁道夫·布赖特沙伊德作为总理。
+- @bruning_chancellor: 让中央党的海因里希·布吕宁做总理。
 
 @braun_chancellor
 on-arrival: chancellor = "Braun"; chancellor_party = "SPD"; z_relation -= 5; dvp_relation -= 5
-subtitle: The Center Party is worried about having so much power in one man.
+subtitle: 中央党对一个人掌握如此大的权力有些担忧。
 
-Our coalition partners are reluctant to accept the new Chancellor, but they do not make loud objections.
-
+我们的盟友不愿接受新总理，但也没有大声反对。
 
 @wels_chancellor
 on-arrival: chancellor = "Wels"; chancellor_party = "SPD"; z_relation -= 3; dvp_relation -= 3
-subtitle: He is a good organizer, but is he also a good chancellor?
+subtitle: 他是一位优秀的组织者，但他也会是一位优秀的总理吗？
 
-Our coalition partners are reluctant to accept the new Chancellor, but they do not make loud objections.
+我们的盟友不愿接受新总理，但也没有大声反对。
 
 @breitscheid_chancellor
 on-arrival: chancellor = "Breitscheid"; chancellor_party = "SPD"; z_relation -= 5; dvp_relation -= 5; kpd_relation += 1
-subtitle: The Center Party is worried about his left-leaning tendencies.
+subtitle: 中央党对他的左翼倾向有些担忧。
 
-Our coalition partners are reluctant to accept the new Chancellor, but they do not make loud objections.
+我们的盟友不愿接受新总理，但也没有大声反对。
 
 @bruning_chancellor
 on-arrival: chancellor = "Brüning"; chancellor_party = "Z"; z_relation += 5; dvp_relation += 5
-subtitle: The Center Party claims it is their turn...
+subtitle: 中央党声称轮到他们了……
 
-The Center Party is grateful that we have supported Brüning for Chancellor..
+中央党很感谢我们支持布吕宁做总理。
 
 
 @not_pm
 
-Herman Müller, one of the SPD's long-time leaders, has died. He will be greatly missed.
+社民党的一名长期领袖赫尔曼·穆勒去世了。我们会永远怀念他的。
