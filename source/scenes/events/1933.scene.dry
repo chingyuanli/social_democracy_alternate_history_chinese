@@ -1,5 +1,5 @@
-title: 1933
-subtitle: 危机的终结？The end of the crisis?
+title: 1933年
+subtitle: 危机的终结？
 tags: event
 priority: -3
 view-if: (year = 1933 and month >= 12) or year >= 1934
